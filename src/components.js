@@ -1,4 +1,4 @@
-// Injeção dinâmica da Sidebar e Header
+// Dynamic Sidebar and Header Injection
 document.addEventListener('DOMContentLoaded', () => {
     const sidebarContainer = document.getElementById('sidebar-container');
     if (sidebarContainer) {
