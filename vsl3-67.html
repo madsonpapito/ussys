@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidade Única - USA System</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header container">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-flag-usa"></i>
+            </div>
+            <span>USA <span class="gradient-text">System</span></span>
+        </div>
+    </header>
+
+    <main class="container section text-center">
+        <h1 class="animate-fade-in" style="font-size: clamp(1.5rem, 5vw, 2.5rem); margin-bottom: var(--spacing-sm);">
+            Sua Última Chance de <span class="gradient-text">Ativação Imediata</span>
+        </h1>
+        
+        <p class="animate-fade-in" style="color: var(--text-muted); margin-bottom: var(--spacing-md); animation-delay: 0.2s;">
+            Assista ao vídeo abaixo para entender como o sistema funciona.
+        </p>
+
+        <!-- Player Tynk.ai -->
+        <div class="video-container animate-fade-in" style="animation-delay: 0.4s; margin-bottom: var(--spacing-md);">
+            <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+
+        <!-- Botão com Delay (CTA) -->
+        <div id="cta-container" class="hidden animate-fade-in">
+            <a href="/hub.html" class="btn-cta">
+                Quero Acessar o Sistema Agora <i class="fas fa-arrow-right"></i>
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+                <i class="fas fa-shield-alt"></i> Acesso Seguro e Imediato
+            </p>
+        </div>
+    </main>
+
+    <footer class="container section text-center" style="border-top: 1px solid var(--glass-border); margin-top: var(--spacing-lg);">
+        <p style="font-size: 0.8rem; color: var(--text-muted);">
+            &copy; 2024 USA System. Todos os direitos reservados.<br>
+            Este site não é afiliado ao Google ou Facebook.
+        </p>
+    </footer>
+
+    <script type="module">
+        // Lógica de Delay do Botão (Exemplo: aparece em 10 segundos ou conforme o vídeo)
+        // Para VSLs reais, você pode ajustar esse tempo baseado na duração do vídeo.
+        const DELAY_IN_SECONDS = 10; 
+        
+        setTimeout(() => {
+            const cta = document.getElementById('cta-container');
+            if (cta) {
+                cta.classList.remove('hidden');
+                cta.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, DELAY_IN_SECONDS * 1000);
+    </script>
+</body>
+</html>

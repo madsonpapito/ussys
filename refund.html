@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund System - USA System</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="display: flex; background: #000;">
+    
+    <!-- Sidebar será injetada aqui pelo components.js -->
+    <div id="sidebar-target"></div>
+
+    <main style="flex: 1; padding: var(--spacing-lg); overflow-y: auto;">
+        <header style="margin-bottom: var(--spacing-lg);">
+            <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Modulo 01</span>
+            <h1 class="gradient-text" style="font-size: 2.5rem;">Guia: Refund System</h1>
+            <p style="color: var(--text-muted);">Siga o passo a passo abaixo para solicitar seu reembolso hoje mesmo.</p>
+        </header>
+
+        <section style="max-width: 900px;">
+            <div class="video-container animate-fade-in" style="margin-bottom: var(--spacing-lg);">
+                <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+
+            <div class="glass-card animate-fade-in" style="animation-delay: 0.2s;">
+                <h2 style="margin-bottom: var(--spacing-md);">Passo a Passo da Operação</h2>
+                
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Acesso ao Portal Oficial</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Abra o site do sistema de reembolsos americanos clicando no link disponível abaixo do vídeo.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Preenchimento dos Dados</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Insira suas informações básicas conforme orientado no vídeo acima para iniciar a verificação de elegibilidade.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Confirmação e Saque</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Após a verificação, o sistema indicará o valor disponível. Siga para a etapa de transferência bancária.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--spacing-lg); text-align: center;">
+                    <button class="btn-cta" style="width: 100%;">Abrir Portal de Reembolsos <i class="fas fa-external-link-alt"></i></button>
+                    <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);"><i class="fas fa-info-circle"></i> O portal abrirá em uma nova aba.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/src/components.js"></script>
+</body>
+</html>

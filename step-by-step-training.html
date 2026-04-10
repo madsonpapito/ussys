@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento Passo a Passo - USA System</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="display: flex; background: #000;">
+    
+    <aside class="sidebar">
+        <div class="logo" style="margin-bottom: var(--spacing-lg);">
+            <div class="logo-icon">
+                <i class="fas fa-flag-usa"></i>
+            </div>
+            <span>USA <span class="gradient-text">System</span></span>
+        </div>
+
+        <nav style="flex: 1;">
+            <a href="/hub.html" class="sidebar-link">
+                <i class="fas fa-th-large"></i> Dashboard
+            </a>
+            <a href="/step-by-step-training.html" class="sidebar-link active">
+                <i class="fas fa-graduation-cap"></i> Treinamento
+            </a>
+        </nav>
+
+        <a href="/hub.html" class="sidebar-link" style="margin-top: auto;">
+            <i class="fas fa-arrow-left"></i> Voltar ao Hub
+        </a>
+    </aside>
+
+    <main style="flex: 1; padding: var(--spacing-lg); overflow-y: auto;">
+        <header style="margin-bottom: var(--spacing-lg);">
+            <h1 class="gradient-text">Treinamento Inicial</h1>
+            <p style="color: var(--text-muted);">Aprenda os fundamentos para utilizar o USA System com maestria.</p>
+        </header>
+
+        <section style="display: grid; gap: var(--spacing-md);">
+            <div class="glass-card animate-fade-in">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3>Aula 01: Introdução ao Sistema</h3>
+                    <span style="font-size: 0.8rem; background: var(--primary-glow); padding: 4px 12px; border-radius: 20px; color: var(--primary);">Concluído</span>
+                </div>
+                <div class="video-container" style="margin-bottom: 1rem;">
+                    <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="glass-card animate-fade-in" style="animation-delay: 0.2s;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h3>Aula 02: Primeiros Reembolsos</h3>
+                    <span style="font-size: 0.8rem; background: var(--surface-light); padding: 4px 12px; border-radius: 20px; color: var(--text-muted);">Próxima Aula</span>
+                </div>
+                <!-- Placeholder para nova aula -->
+                <div style="height: 100px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic;">
+                    Assista a aula anterior para desbloquear...
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

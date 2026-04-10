@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - USA System</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="display: flex; background: #000;">
+    
+    <!-- Sidebar será injetada aqui pelo components.js -->
+    <div id="sidebar-target"></div>
+
+    <main style="flex: 1; padding: var(--spacing-lg); overflow-y: auto;">
+        <header style="margin-bottom: var(--spacing-lg);">
+            <h1 class="gradient-text">Bem-vindo ao Dashboard</h1>
+            <p style="color: var(--text-muted);">Selecione o guia que deseja consultar hoje.</p>
+        </header>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--spacing-md);">
+            <!-- Card 1 -->
+            <a href="/american-refunds.html" style="text-decoration: none; color: inherit;">
+                <div class="glass-card animate-fade-in">
+                    <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>American Refunds</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Guia completo sobre como solicitar reembolsos nos EUA.</p>
+                </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="/banking-benefits-guide.html" style="text-decoration: none; color: inherit;">
+                <div class="glass-card animate-fade-in" style="animation-delay: 0.1s;">
+                    <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Banking Benefits</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Como maximizar seus benefícios bancários em instituições americanas.</p>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="/housing-assistance-guide.html" style="text-decoration: none; color: inherit;">
+                <div class="glass-card animate-fade-in" style="animation-delay: 0.2s;">
+                    <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Housing Assistance</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Programas de auxílio moradia e subsídios disponíveis.</p>
+                </div>
+            </a>
+
+            <!-- Card 4 -->
+            <a href="/amazon-tax-recovery.html" style="text-decoration: none; color: inherit;">
+                <div class="glass-card animate-fade-in" style="animation-delay: 0.3s;">
+                    <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">
+                        <i class="fab fa-amazon"></i>
+                    </div>
+                    <h3>Amazon Tax Recovery</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Recuperação de taxas pagas indevidamente em compras na Amazon.</p>
+                </div>
+            </a>
+
+            <!-- Card 5 -->
+            <a href="/snap-food-stamps-guide.html" style="text-decoration: none; color: inherit;">
+                <div class="glass-card animate-fade-in" style="animation-delay: 0.4s;">
+                    <div style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>SNAP Food Stamps</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Tudo sobre o programa de auxílio alimentação americano.</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <script src="/src/components.js"></script>
+</body>
+</html>
