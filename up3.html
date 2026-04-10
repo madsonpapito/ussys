@@ -3,65 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upsell 03 - USA System</title>
+    <title>Official Check - Final Step</title>
     <link rel="stylesheet" href="/src/styles/main.css">
     <link rel="stylesheet" href="/src/styles/components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="header container">
-        <div class="logo">
-            <div class="logo-icon">
-                <i class="fas fa-flag-usa"></i>
-            </div>
-            <span>USA <span class="gradient-text">System</span></span>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-flag-usa"></i>
+                </div>
+                USA <span>System</span>
+            </a>
+            <nav style="display: flex; gap: 20px;">
+                <a href="/" style="color: #fff; text-decoration: none; font-weight: 600;">Home</a>
+                <a href="#" style="color: #fff; text-decoration: none; font-weight: 600;">About</a>
+                <a href="#" style="color: #fff; text-decoration: none; font-weight: 600;">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container section text-center">
-        <h1 class="animate-fade-in" style="font-size: clamp(1.5rem, 5vw, 2.5rem); margin-bottom: var(--spacing-sm);">
-            Acesso Vitalício ao <span class="gradient-text">USA System</span>
-        </h1>
-        
-        <p class="animate-fade-in" style="color: var(--text-muted); margin-bottom: var(--spacing-md); animation-delay: 0.2s;">
-            Assista ao vídeo abaixo para entender como o sistema funciona.
-        </p>
+    <div class="official-bar">
+        <div class="container">
+            "Final verification: secure your 100% payout instructions below"
+        </div>
+    </div>
 
-        <!-- Player Tynk.ai -->
-        <div class="video-container animate-fade-in" style="animation-delay: 0.4s; margin-bottom: var(--spacing-md);">
+    <main class="container section">
+        <div style="background: #002147; color: #fff; padding: 2rem; border-radius: 4px; margin-bottom: 2rem;">
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">Final Step</p>
+            <h1 style="font-size: 1.5rem;">Congratulations! You are eligible for immediate transfer</h1>
+        </div>
+
+        <div class="text-center" style="margin-bottom: 2rem;">
+            <a href="#" style="color: var(--primary); font-weight: 700; text-decoration: underline; font-size: 1.1rem;">
+                Watch the final confirmation: "Step 3 of 3"
+            </a>
+            <div style="margin-top: 10px; font-size: 1.5rem; color: var(--primary);">
+                <i class="fas fa-arrow-down"></i>
+            </div>
+        </div>
+
+        <div class="video-container" style="max-width: 800px; margin: 0 auto 3rem;">
             <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
 
-        <!-- Botão com Delay (CTA) -->
-        <div id="cta-container" class="hidden animate-fade-in">
-            <a href="/hub.html" class="btn-cta">
-                Quero Acessar o Sistema Agora <i class="fas fa-arrow-right"></i>
-            </a>
-            <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
-                <i class="fas fa-shield-alt"></i> Acesso Seguro e Imediato
-            </p>
+        <div class="text-center" style="max-width: 600px; margin: 0 auto;">
+            <div style="font-size: 2rem; margin-bottom: 10px; color: var(--primary);">
+                <i class="fas fa-circle-notch fa-spin"></i>
+            </div>
+            <p style="font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px;">Required to Follow</p>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%;"></div>
+            </div>
+
+            <div id="cta-container" class="hidden">
+                <a href="/hub.html" class="btn-cta" style="width: 100%;">
+                    Access My Claim Dashboard <i class="fas fa-check-double"></i>
+                </a>
+            </div>
         </div>
     </main>
 
-    <footer class="container section text-center" style="border-top: 1px solid var(--glass-border); margin-top: var(--spacing-lg);">
-        <p style="font-size: 0.8rem; color: var(--text-muted);">
-            &copy; 2024 USA System. Todos os direitos reservados.<br>
-            Este site não é afiliado ao Google ou Facebook.
-        </p>
+    <footer class="container section text-center" style="border-top: 1px solid var(--border); opacity: 0.6; font-size: 0.8rem;">
+        <p>&copy; 2024 USA System. Official Financial Awareness Program.</p>
     </footer>
 
-    <script type="module">
-        // Lógica de Delay do Botão (Exemplo: aparece em 10 segundos ou conforme o vídeo)
-        // Para VSLs reais, você pode ajustar esse tempo baseado na duração do vídeo.
-        const DELAY_IN_SECONDS = 10; 
-        
+    <script>
         setTimeout(() => {
-            const cta = document.getElementById('cta-container');
-            if (cta) {
-                cta.classList.remove('hidden');
-                cta.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }, DELAY_IN_SECONDS * 1000);
+            document.getElementById('cta-container').classList.remove('hidden');
+        }, 5000);
     </script>
 </body>
 </html>

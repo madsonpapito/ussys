@@ -3,85 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funds Verification - USA System</title>
+    <title>Official Check - Verification Successful</title>
     <link rel="stylesheet" href="/src/styles/main.css">
     <link rel="stylesheet" href="/src/styles/components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Badge de Desconto Flutuante -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-flag-usa"></i>
+                </div>
+                USA <span>System</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="official-bar">
+        <div class="container">
+            "Official check: verification complete — funds ready for claim"
+        </div>
+    </div>
+
+    <!-- Badge de Desconto -->
     <a href="#cta" class="discount-badge">
         <i class="fas fa-tag"></i> 20% DISCOUNT APPLIED
     </a>
 
-    <header class="header container">
-        <div class="logo">
-            <div class="logo-icon">
-                <i class="fas fa-flag-usa"></i>
+    <main class="container section">
+        <div class="glass-card animate-fade-in text-center" style="max-width: 800px; margin: 0 auto;">
+            <div style="background: rgba(5, 150, 105, 0.1); color: #059669; padding: 0.5rem 1rem; border-radius: 50px; display: inline-flex; align-items: center; gap: 8px; margin-bottom: 1.5rem; font-weight: 700; font-size: 0.85rem;">
+                <i class="fas fa-check-circle"></i> VERIFICATION SUCCESSFUL
             </div>
-            <span>USA <span class="gradient-text">System</span></span>
-        </div>
-        <nav style="display: flex; gap: var(--spacing-sm); color: var(--text-muted); font-size: 0.9rem;">
-            <span>Official Check 2024</span>
-        </nav>
-    </header>
-
-    <main class="container section text-center" style="max-width: 850px;">
-        <div class="glass-card animate-fade-in" style="border-color: var(--primary-glow); margin-bottom: var(--spacing-md);">
-            <h2 style="font-size: 1rem; color: var(--primary); text-transform: uppercase; margin-bottom: 0.5rem;">
-                <i class="fas fa-check-circle"></i> Verification Successful
-            </h2>
-            <h1 style="font-size: 2.2rem; margin-bottom: 1rem;">
-                You have <span class="gradient-text">$2,350.00</span> available for claim
-            </h1>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">
-                Source: Federal Restitution System — Record #USA-88291
-            </p>
-        </div>
-        
-        <div class="video-container animate-fade-in" style="animation-delay: 0.2s; margin-bottom: var(--spacing-lg);">
-            <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        </div>
-
-        <div id="cta" class="animate-fade-in" style="animation-delay: 0.4s;">
-            <a href="/hub.html" class="btn-cta" style="width: 100%; max-width: 500px;">
-                Claim My Funds Now <i class="fas fa-wallet"></i>
-            </a>
             
-            <div style="display: flex; justify-content: center; gap: var(--spacing-md); margin-top: var(--spacing-md); opacity: 0.6;">
-                <div style="display: flex; align-items: center; gap: 5px; font-size: 0.8rem;">
-                    <i class="fas fa-lock"></i> Secure SSL
-                </div>
-                <div style="display: flex; align-items: center; gap: 5px; font-size: 0.8rem;">
-                    <i class="fas fa-user-shield"></i> Verified 
-                </div>
-                <div style="display: flex; align-items: center; gap: 5px; font-size: 0.8rem;">
-                    <i class="fas fa-clock"></i> Limited Time
+            <h1 style="font-size: 2.2rem; margin-bottom: 2rem; color: var(--primary);">
+                You have <span style="color: var(--secondary);">$2,350.00</span> available for claim
+            </h1>
+
+            <div class="video-container" style="margin-bottom: 2rem;">
+                <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+
+            <div id="cta" class="text-center">
+                <a href="/up1.html" class="btn-cta" style="width: 100%; max-width: 500px;">
+                    Claim My Funds Now <i class="fas fa-wallet"></i>
+                </a>
+                
+                <div style="display: flex; justify-content: center; gap: 30px; margin-top: 2rem; opacity: 0.7; font-size: 0.8rem;">
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <i class="fas fa-lock"></i> SSL Secure
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <i class="fas fa-id-card"></i> ID Verified
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 5px;">
+                        <i class="fas fa-clock"></i> Limited Time
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="section" style="text-align: left; margin-top: var(--spacing-lg);">
-            <h3 style="margin-bottom: var(--spacing-sm);">How it works:</h3>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-sm);">
-                <div class="glass-card" style="padding: 1rem;">
-                    <strong style="color: var(--primary);">1. Watch</strong>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Watch the full video to understand the claim process.</p>
+        <section class="section">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div class="glass-card">
+                    <strong style="color: var(--primary); display: block; margin-bottom: 10px;">1. Verification</strong>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Cross-referenced with public financial records (Complete).</p>
                 </div>
-                <div class="glass-card" style="padding: 1rem;">
-                    <strong style="color: var(--primary);">2. Verify</strong>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Confirm your identity through our secure portal.</p>
+                <div class="glass-card">
+                    <strong style="color: var(--primary); display: block; margin-bottom: 10px;">2. Documentation</strong>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Access the educational roadmap to file your claim correctly.</p>
                 </div>
-                <div class="glass-card" style="padding: 1rem;">
-                    <strong style="color: var(--primary);">3. Receive</strong>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Funds are transferred directly via ACH or PayPal.</p>
+                <div class="glass-card">
+                    <strong style="color: var(--primary); display: block; margin-bottom: 10px;">3. Disbursement</strong>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Follow the guide to receive funds via direct deposit.</p>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="container section text-center" style="border-top: 1px solid var(--glass-border); margin-top: var(--spacing-lg); opacity: 0.4; font-size: 0.7rem;">
-        <p>Copyright &copy; 2024 USA System. This site is not part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+    <footer class="container section text-center" style="border-top: 1px solid var(--border); opacity: 0.6; font-size: 0.8rem;">
+        <p>&copy; 2024 USA System. Official Recovery Support Hub.</p>
     </footer>
 
     <script src="/src/components.js"></script>

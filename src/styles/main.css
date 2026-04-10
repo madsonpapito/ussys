@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
 :root {
-    /* Colors - Neon Premium Palette */
-    --primary: #00f2fe;
-    --primary-glow: rgba(0, 242, 254, 0.4);
-    --secondary: #4facfe;
-    --accent: #b8ff01; /* Lime neon for CTAs */
-    --background: #050505;
-    --surface: #111112;
-    --surface-light: #1c1c1e;
-    --text: #ffffff;
-    --text-muted: #a1a1aa;
+    /* Colors - Government Official Palette */
+    --primary: #002147; /* Navy Blue */
+    --secondary: #004a99; /* Royal Blue */
+    --accent: #004a99; /* Action Color */
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --surface-light: #f1f5f9;
+    --text: #0f172a;
+    --text-muted: #64748b;
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -19,11 +18,11 @@
     --spacing-lg: 4rem;
     
     /* Borders & Shadow */
-    --radius-sm: 8px;
-    --radius-md: 16px;
-    --radius-lg: 24px;
-    --glass: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 20px;
+    --border: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
 * {

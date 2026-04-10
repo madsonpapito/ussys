@@ -3,169 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Official Check - Verificação de Restituição</title>
+    <title>Official Check - Verification Quiz</title>
     <link rel="stylesheet" href="/src/styles/main.css">
     <link rel="stylesheet" href="/src/styles/components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="text-center" style="display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: var(--spacing-md);">
-
-    <div class="glass-card animate-fade-in" style="max-width: 500px; width: 100%;">
-        
-        <!-- Header do Quiz -->
-        <div style="margin-bottom: var(--spacing-lg);">
-            <div class="logo-icon" style="margin: 0 auto 1rem auto; width: 48px; height: 48px;">
-                <i class="fas fa-shield-check" style="color: #fff; font-size: 1.5rem;"></i>
-            </div>
-            <h2 style="font-size: 1.25rem;">Official Check</h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Verifique se há restituições em seu nome</p>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-flag-usa"></i>
+                </div>
+                USA <span>System</span>
+            </a>
         </div>
+    </header>
 
-        <!-- Stepper -->
-        <div class="stepper">
-            <div id="step-1-ui" class="step active">
-                <div class="step-circle">1</div>
-                <span style="font-size: 0.7rem;">Dados</span>
-            </div>
-            <div id="step-2-ui" class="step">
-                <div class="step-circle">2</div>
-                <span style="font-size: 0.7rem;">Verificar</span>
-            </div>
-            <div id="step-3-ui" class="step">
-                <div class="step-circle">3</div>
-                <span style="font-size: 0.7rem;">Resultado</span>
-            </div>
+    <div class="official-bar">
+        <div class="container">
+            "Official check: priority verification portal — response in 10s"
         </div>
-
-        <!-- Conteúdo do Passo 1: Formulário -->
-        <div id="content-step-1">
-            <div class="form-group">
-                <label for="full-name">Nome Completo</label>
-                <input type="text" id="full-name" class="form-input" placeholder="Digite seu nome...">
-            </div>
-            <div class="form-group">
-                <label for="state">Estado (EUA)</label>
-                <select id="state" class="form-input">
-                    <option value="">Selecione seu estado</option>
-                    <option value="FL">Florida</option>
-                    <option value="NY">New York</option>
-                    <option value="CA">California</option>
-                    <option value="TX">Texas</option>
-                    <option value="WA">Washington</option>
-                </select>
-            </div>
-            <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: var(--spacing-md); text-align: left;">
-                <input type="checkbox" id="auth" style="margin-top: 5px;">
-                <label for="auth" style="font-size: 0.8rem; color: var(--text-muted);">
-                    Eu autorizo a verificação nos bancos de dados federais para busca de valores não resgatados.
-                </label>
-            </div>
-            <button id="btn-next" class="btn-cta" style="width: 100%;">Verificar Agora <i class="fas fa-search"></i></button>
-        </div>
-
-        <!-- Conteúdo do Passo 2: Verificação -->
-        <div id="content-step-2" class="hidden">
-            <h3 id="verify-text">Iniciando Varredura...</h3>
-            <p id="verify-detail" style="color: var(--text-muted); font-size: 0.8rem; margin-top: 0.5rem;">Acessando registros federais...</p>
-            
-            <div class="progress-bar">
-                <div id="progress-fill" class="progress-fill"></div>
-            </div>
-
-            <div id="log" style="text-align: left; font-family: monospace; font-size: 0.7rem; color: var(--primary); height: 60px; overflow: hidden; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 4px;">
-                > Conectando ao servidor...<br>
-            </div>
-        </div>
-
-        <!-- Conteúdo do Passo 3: Resultado -->
-        <div id="content-step-3" class="hidden">
-            <div style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;">
-                <i class="fas fa-circle-check"></i>
-            </div>
-            <h2 id="result-name">Parabéns!</h2>
-            <div style="background: var(--primary-glow); padding: var(--spacing-sm); border-radius: var(--radius-sm); margin: var(--spacing-md) 0;">
-                <span style="font-size: 0.8rem; text-transform: uppercase;">Valor Encontrado</span><br>
-                <span class="gradient-text" style="font-size: 2.5rem; font-weight: 800;">$2.350,00</span>
-            </div>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--spacing-md);">
-                Foram identificadas restituições fiscais não resgatadas vinculadas ao seu nome.
-            </p>
-            <a href="/index.html" class="btn-cta" style="width: 100%;">Resgatar Agora <i class="fas fa-rocket"></i></a>
-        </div>
-
     </div>
 
+    <main class="container section" style="max-width: 600px;">
+        <div class="stepper">
+            <div class="step active" id="step-dot-1">
+                <div class="step-circle">1</div>
+                <span>Data</span>
+            </div>
+            <div class="step" id="step-dot-2">
+                <div class="step-circle">2</div>
+                <span>Verify</span>
+            </div>
+            <div class="step" id="step-dot-3">
+                <div class="step-circle">3</div>
+                <span>Result</span>
+            </div>
+        </div>
+
+        <form id="quiz-form" class="glass-card animate-fade-in" onsubmit="handleSteps(event)">
+            <!-- Step 1: Personal Data -->
+            <div id="step-1">
+                <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Claimant Information</h2>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-input" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <select id="state" class="form-input" required>
+                        <option value="">Select your state</option>
+                        <option value="FL">Florida</option>
+                        <option value="CA">California</option>
+                        <option value="TX">Texas</option>
+                        <option value="NY">New York</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem; font-size: 0.9rem; color: var(--text-muted);">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms" style="margin: 0;">I authorize verification in federal database.</label>
+                </div>
+                <button type="submit" class="btn-cta" style="width: 100%;">Verify Now</button>
+            </div>
+
+            <!-- Step 2: Verification Loading -->
+            <div id="step-2" class="hidden text-center">
+                <h2 style="margin-bottom: 1rem; color: var(--primary);">Analyzing Public Records...</h2>
+                <div style="font-size: 3rem; color: var(--secondary); margin-bottom: 1.5rem;">
+                    <i class="fas fa-database fa-beat"></i>
+                </div>
+                <div class="progress-bar">
+                    <div id="loading-progress" class="progress-fill" style="width: 0%; transition: width 0.1s linear;"></div>
+                </div>
+                <p id="loading-status" style="font-weight: 600; color: var(--secondary);">Connecting to Federal API...</p>
+                <div style="margin-top: 2rem; text-align: left; font-size: 0.85rem; color: var(--text-muted); background: var(--surface-light); padding: 1rem; border-radius: 4px;">
+                    <p id="log-1" class="hidden"><i class="fas fa-check"></i> SSL Connection established...</p>
+                    <p id="log-2" class="hidden"><i class="fas fa-check"></i> Searching for claimant in Social Security database...</p>
+                    <p id="log-3" class="hidden"><i class="fas fa-check"></i> 1 match found for unclaimed restitutions!</p>
+                </div>
+            </div>
+
+            <!-- Step 3: Result -->
+            <div id="step-3" class="hidden text-center">
+                <h2 style="color: #059669; margin-bottom: 1rem;">
+                    <i class="fas fa-check-circle"></i> Funds Located!
+                </h2>
+                <div style="background: var(--surface-light); padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Estimated Amount Available:</p>
+                    <h1 style="font-size: 3rem; color: var(--primary);">$2,350.00</h1>
+                </div>
+                <p style="margin-bottom: 2rem; font-size: 0.95rem;">Please secure your claim instructions in the next page. Payouts are first-come, first-served.</p>
+                <a href="/pvn.html" class="btn-cta" style="width: 100%;">Secure My Payout Instructions</a>
+            </div>
+        </form>
+    </main>
+
+    <footer class="container section text-center" style="border-top: 1px solid var(--border); opacity: 0.6; font-size: 0.8rem;">
+        <p>&copy; 2024 USA System. Access to information is governed by FOIA policies.</p>
+    </footer>
+
     <script>
-        const btnNext = document.getElementById('btn-next');
-        const step1 = document.getElementById('content-step-1');
-        const step2 = document.getElementById('content-step-2');
-        const step3 = document.getElementById('content-step-3');
-        const progressFill = document.getElementById('progress-fill');
-        const verifyText = document.getElementById('verify-text');
-        const verifyDetail = document.getElementById('verify-detail');
-        const log = document.getElementById('log');
+        function handleSteps(e) {
+            e.preventDefault();
+            
+            // Mudar para o Step 2 (Loading)
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('step-2').classList.remove('hidden');
+            document.getElementById('step-dot-1').classList.replace('active', 'completed');
+            document.getElementById('step-dot-2').classList.add('active');
 
-        const logs = [
-            "> Verificando registros tributários...",
-            "> Buscando CPF/ITIN no banco de dados...",
-            "> Consultando Reembolsos Estaduais...",
-            "> Verificando taxas federais atrasadas...",
-            "> Restituição IDENTIFICADA!",
-            "> Calculando montante final..."
-        ];
-
-        btnNext.addEventListener('click', () => {
-            const name = document.getElementById('full-name').value;
-            const state = document.getElementById('state').value;
-            const auth = document.getElementById('auth').checked;
-
-            if(!name || !state || !auth) {
-                alert('Por favor, preencha todos os campos e autorize a verificação.');
-                return;
-            }
-
-            // Mudar para o Passo 2
-            step1.classList.add('hidden');
-            step2.classList.remove('hidden');
-            document.getElementById('step-1-ui').classList.add('completed');
-            document.getElementById('step-2-ui').classList.add('active');
-
-            startVerification();
-        });
-
-        function startVerification() {
             let progress = 0;
-            let logIndex = 0;
+            const bar = document.getElementById('loading-progress');
+            const status = document.getElementById('loading-status');
 
             const interval = setInterval(() => {
                 progress += 1;
-                progressFill.style.width = progress + '%';
+                bar.style.width = progress + '%';
 
-                if (progress % 15 === 0 && logIndex < logs.length) {
-                    log.innerHTML += logs[logIndex] + '<br>';
-                    log.scrollTop = log.scrollHeight;
-                    logIndex++;
+                if (progress === 20) {
+                    status.innerText = "Scanning Social Security Records...";
+                    document.getElementById('log-1').classList.remove('hidden');
                 }
-
-                if (progress === 30) { verifyText.innerText = "Consultando Banco de Dados Federal..."; }
-                if (progress === 60) { verifyText.innerText = "Verificando Reembolsos Disponíveis..."; }
-                if (progress === 90) { verifyText.innerText = "Finalizando Verificação..."; }
+                if (progress === 50) {
+                    status.innerText = "Checking Tax Compliance Refunds...";
+                    document.getElementById('log-2').classList.remove('hidden');
+                }
+                if (progress === 80) {
+                    status.innerText = "Finalizing calculations...";
+                    document.getElementById('log-3').classList.remove('hidden');
+                }
 
                 if (progress >= 100) {
                     clearInterval(interval);
-                    showResult();
+                    setTimeout(() => {
+                        // Ir para o Step 3 (Resultado)
+                        document.getElementById('step-2').classList.add('hidden');
+                        document.getElementById('step-3').classList.remove('hidden');
+                        document.getElementById('step-dot-2').classList.replace('active', 'completed');
+                        document.getElementById('step-dot-3').classList.add('active');
+                    }, 500);
                 }
-            }, 80); // Aproximadamente 8 segundos
-        }
-
-        function showResult() {
-            step2.classList.add('hidden');
-            step3.classList.remove('hidden');
-            document.getElementById('step-2-ui').classList.add('completed');
-            document.getElementById('step-3-ui').classList.add('active');
-            
-            const name = document.getElementById('full-name').value;
-            document.getElementById('result-name').innerText = `Parabéns, ${name.split(' ')[0]}!`;
+            }, 50);
         }
     </script>
 </body>

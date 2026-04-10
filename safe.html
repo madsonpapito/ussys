@@ -4,50 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USA Financial Awareness Program | Educational Excellence</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/src/styles/main.css">
-    <link rel="stylesheet" href="/src/styles/white.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="white-theme">
+<body style="background: #fff;">
 
-    <nav class="white-nav">
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-            <div class="logo" style="color: var(--white-primary);">
-                <i class="fas fa-book-reader"></i> USA <span style="font-weight: 300;">Learning</span>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-reader"></i>
+                </div>
+                USA <span>Learning</span>
             </div>
-            <div style="display: flex; gap: 30px; font-weight: 600; font-size: 0.9rem;">
-                <a href="#about" style="color: inherit; text-decoration: none;">Program Info</a>
-                <a href="#curriculum" style="color: inherit; text-decoration: none;">Curriculum</a>
-                <a href="#contact" style="color: inherit; text-decoration: none;">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="white-hero">
-        <div class="container" style="max-width: 800px;">
-            <h1 style="font-size: 2.8rem; margin-bottom: 20px;">USA SYSTEM: Financial Awareness & Educational Program</h1>
-            <p style="font-size: 1.15rem; opacity: 0.9; margin-bottom: 40px;">Developing a clearer, more conscious, and responsible relationship with personal financial management through structured education.</p>
-            <a href="#curriculum" class="white-btn">View Program Curriculum</a>
+            <nav style="display: flex; gap: 30px; font-weight: 600; font-size: 0.9rem;">
+                <a href="#about" style="color: #fff; text-decoration: none;">Program Info</a>
+                <a href="#curriculum" style="color: #fff; text-decoration: none;">Curriculum</a>
+                <a href="#contact" style="color: #fff; text-decoration: none;">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <section id="about" class="white-section">
+    <div style="background: #001a35; color: #fff; padding: 4rem 0; text-align: center;">
+        <div class="container" style="max-width: 800px;">
+            <h1 style="font-size: 2.8rem; margin-bottom: 20px;">USA SYSTEM: Financial Awareness & Educational Program</h1>
+            <p style="font-size: 1.15rem; opacity: 0.9;">Developing a clearer, more conscious, and responsible relationship with personal financial management through structured education.</p>
+        </div>
+    </div>
+
+    <section id="about" class="section">
         <div class="container">
             <div style="max-width: 900px; margin: 0 auto; line-height: 1.8;">
-                <h2 style="color: var(--white-primary); margin-bottom: 20px;">What is the USA SYSTEM?</h2>
+                <h2 style="color: var(--primary); margin-bottom: 20px;">What is the USA SYSTEM?</h2>
                 <p>The USA SYSTEM is a structured educational program designed to help individuals develop a clearer, more conscious, and responsible relationship with money. This program focuses on education, self-reflection, and the development of skills related to personal financial awareness and balanced decision-making.</p>
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
-                    <div class="white-card" style="border-left: 4px solid #48bb78;">
-                        <h4 style="color: #48bb78; margin-bottom: 15px;"><i class="fas fa-check-circle"></i> Who is this for?</h4>
+                    <div class="glass-card" style="border-left: 4px solid #059669;">
+                        <h4 style="color: #059669; margin-bottom: 15px;"><i class="fas fa-check-circle"></i> Who is this for?</h4>
                         <ul style="padding-left: 20px; font-size: 0.9rem;">
                             <li>Adults seeking to understand their relationship with money.</li>
                             <li>Individuals wanting to improve financial organization.</li>
                             <li>Proactive learners seeking ethical and realistic guidance.</li>
                         </ul>
                     </div>
-                    <div class="white-card" style="border-left: 4px solid #f56565;">
-                        <h4 style="color: #f56565; margin-bottom: 15px;"><i class="fas fa-times-circle"></i> Who this is NOT for</h4>
+                    <div class="glass-card" style="border-left: 4px solid #dc2626;">
+                        <h4 style="color: #dc2626; margin-bottom: 15px;"><i class="fas fa-times-circle"></i> Who this is NOT for</h4>
                         <ul style="padding-left: 20px; font-size: 0.9rem;">
                             <li>Those looking for guaranteed income or profits.</li>
                             <li>Individuals expecting "shortcuts" or financial schemes.</li>
@@ -59,31 +61,31 @@
         </div>
     </section>
 
-    <section id="curriculum" class="white-section" style="background: var(--white-light);">
+    <section id="curriculum" class="section" style="background: var(--surface-light);">
         <div class="container">
             <div class="text-center" style="margin-bottom: 60px;">
-                <h2 style="font-size: 2.5rem; color: var(--white-primary);">Educational Focus Areas</h2>
+                <h2 style="font-size: 2.5rem; color: var(--primary);">Educational Focus Areas</h2>
                 <p style="color: var(--text-muted);">A comprehensive framework for financial literacy.</p>
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-                <div class="white-card">
-                    <i class="fas fa-brain" style="font-size: 2rem; color: var(--white-secondary); margin-bottom: 15px;"></i>
+                <div class="glass-card text-center">
+                    <i class="fas fa-brain" style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;"></i>
                     <h4>Financial Awareness</h4>
                     <p style="font-size: 0.9rem;">Understanding habits and behaviors that drive financial choices.</p>
                 </div>
-                <div class="white-card">
-                    <i class="fas fa-balance-scale" style="font-size: 2rem; color: var(--white-secondary); margin-bottom: 15px;"></i>
+                <div class="glass-card text-center">
+                    <i class="fas fa-balance-scale" style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;"></i>
                     <h4>Decision-Making</h4>
                     <p style="font-size: 0.9rem;">Frameworks for making responsible and conscious choices.</p>
                 </div>
-                <div class="white-card">
-                    <i class="fas fa-list-check" style="font-size: 2rem; color: var(--white-secondary); margin-bottom: 15px;"></i>
+                <div class="glass-card text-center">
+                    <i class="fas fa-list-check" style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;"></i>
                     <h4>Organization</h4>
                     <p style="font-size: 0.9rem;">Basic principles of personal financial tracking and planning.</p>
                 </div>
-                <div class="white-card">
-                    <i class="fas fa-file-pdf" style="font-size: 2rem; color: var(--white-secondary); margin-bottom: 15px;"></i>
+                <div class="glass-card text-center">
+                    <i class="fas fa-file-pdf" style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;"></i>
                     <h4>Guided Materials</h4>
                     <p style="font-size: 0.9rem;">Downloadable PDFs and structured reflection worksheets.</p>
                 </div>
@@ -91,18 +93,18 @@
         </div>
     </section>
 
-    <section class="white-section text-center">
+    <section class="section text-center">
         <div class="container" style="max-width: 800px;">
-            <div class="white-card" style="padding: 3rem;">
-                <h2 style="margin-bottom: 20px;">Important Notice</h2>
-                <div style="text-align: left; font-size: 0.95rem; color: var(--white-text);">
+            <div class="glass-card" style="padding: 3rem;">
+                <h2 style="margin-bottom: 20px; color: var(--primary);">Important Notice</h2>
+                <div style="text-align: left; font-size: 0.95rem;">
                     <p style="margin-bottom: 15px;">- This product provides <strong>educational and informational content only</strong>.</p>
                     <p style="margin-bottom: 15px;">- It does <strong>not</strong> guarantee financial outcomes, compensation, or state/federal eligibility.</p>
                     <p style="margin-bottom: 15px;">- This program is <strong>not affiliated</strong> with any government agency or official organization.</p>
                 </div>
                 
                 <div style="margin: 40px 0;">
-                    <a href="https://www.checkout-ds24.com/product/676181/" class="white-btn" style="width: 100%; font-size: 1.1rem;">Enroll in the Educational Program</a>
+                    <a href="https://www.checkout-ds24.com/product/676181/" class="btn-cta" style="width: 100%; font-size: 1.1rem;">Enroll in the Educational Program</a>
                 </div>
 
                 <div style="display: flex; justify-content: center; align-items: center; gap: 30px; opacity: 0.8;">
@@ -116,25 +118,27 @@
         </div>
     </section>
 
-    <footer class="white-footer">
+    <footer style="background: var(--primary); color: #fff; padding: 4rem 0;">
         <div class="container">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
                 <div>
-                    <h4 style="color: #fff; margin-bottom: 20px;">USA SYSTEM</h4>
-                    <p>Financial Awareness Educational Program.</p>
+                    <h4 style="margin-bottom: 20px;">USA SYSTEM</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Financial Awareness Educational Program.</p>
                 </div>
                 <div id="contact">
-                    <h4 style="color: #fff; margin-bottom: 20px;">Support</h4>
-                    <p><i class="fas fa-envelope"></i> support@usa-system.com</p>
+                    <h4 style="margin-bottom: 20px;">Support</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.8;"><i class="fas fa-envelope"></i> support@usa-system.com</p>
                 </div>
                 <div>
-                    <h4 style="color: #fff; margin-bottom: 20px;">Legal Compliance</h4>
-                    <a href="/imprint.html">Imprint</a><br>
-                    <a href="/privacy.html">Privacy Policy</a><br>
-                    <a href="/terms.html">Terms of Service</a>
+                    <h4 style="margin-bottom: 20px;">Legal Compliance</h4>
+                    <div style="font-size: 0.9rem; line-height: 2;">
+                        <a href="/imprint.html" style="color: #fff; text-decoration: none; opacity: 0.8;">Imprint</a><br>
+                        <a href="/privacy.html" style="color: #fff; text-decoration: none; opacity: 0.8;">Privacy Policy</a><br>
+                        <a href="/terms.html" style="color: #fff; text-decoration: none; opacity: 0.8;">Terms of Service</a>
+                    </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid #2d3748; padding-top: 20px; text-align: center; font-size: 0.8rem;">
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.8rem; opacity: 0.6;">
                 <p>Digital Product Delivery: Access provided immediately via email after purchase.</p>
                 <p>&copy; 2024 USA SYSTEM Education Group. All rights reserved.</p>
             </div>

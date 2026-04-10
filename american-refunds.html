@@ -3,61 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>American Refunds - USA System</title>
+    <title>American Refunds Guide - USA System</title>
     <link rel="stylesheet" href="/src/styles/main.css">
     <link rel="stylesheet" href="/src/styles/components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body style="display: flex; background: #000;">
-    
-    <!-- Sidebar será injetada aqui pelo components.js -->
-    <div id="sidebar-target"></div>
+<body style="display: flex; background: #f1f5f9;">
 
-    <main style="flex: 1; padding: var(--spacing-lg); overflow-y: auto;">
-        <header style="margin-bottom: var(--spacing-lg);">
-            <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Modulo 01</span>
-            <h1 class="gradient-text" style="font-size: 2.5rem;">Guia: American Refunds</h1>
-            <p style="color: var(--text-muted);">Siga o passo a passo abaixo para solicitar seu reembolso hoje mesmo.</p>
-        </header>
+    <!-- Sidebar será injetada aqui -->
+    <div id="sidebar-container"></div>
 
-        <section style="max-width: 900px;">
-            <div class="video-container animate-fade-in" style="margin-bottom: var(--spacing-lg);">
-                <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
+    <main style="flex: 1; padding: var(--spacing-md); height: 100vh; overflow-y: auto;">
+        <div class="container" style="max-width: 900px; margin: 0 auto;">
+            <div class="glass-card">
+                <nav style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-muted);">
+                    <a href="/hub.html" style="color: inherit; text-decoration: none;">Dashboard</a> / 
+                    <span style="color: var(--primary);">American Refunds</span>
+                </nav>
 
-            <div class="glass-card animate-fade-in" style="animation-delay: 0.2s;">
-                <h2 style="margin-bottom: var(--spacing-md);">Passo a Passo da Operação</h2>
-                
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Acesso ao Portal Oficial</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Abra o site do sistema de reembolsos americanos clicando no link disponível abaixo do vídeo.</p>
-                    </div>
+                <h1 style="color: var(--primary); margin-bottom: 1.5rem;">Official American Refunds Guide</h1>
+                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">Follow this comprehensive roadmap to identify and claim federal tax and administrative refunds entitled to residents.</p>
+
+                <div class="video-container" style="margin-bottom: 3rem;">
+                    <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
 
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Preenchimento dos Dados</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Insira suas informações básicas conforme orientado no vídeo acima para iniciar a verificação de elegibilidade.</p>
+                <div class="section">
+                    <h2 style="color: var(--primary); margin-bottom: 1rem;">1. Eligibility Check</h2>
+                    <p style="margin-bottom: 1.5rem;">The first step in claiming your restitution is verifying your status against the current federal fiscal year's available funds. Our system has already pre-verified your initial eligibility.</p>
+                    
+                    <div style="background: #e6f0ff; border-left: 4px solid var(--secondary); padding: 1.5rem; border-radius: 4px; margin-bottom: 2rem;">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-info-circle"></i> Important Notice</h4>
+                        <p style="font-size: 0.9rem; color: var(--primary);">Refunds are processed sequentially. Ensure all your documentation is ready before proceeding to the payout setup.</p>
                     </div>
+
+                    <h2 style="color: var(--primary); margin-bottom: 1rem;">2. Required Documentation</h2>
+                    <ul style="padding-left: 20px; line-height: 2;">
+                        <li>Valid government-issued ID (Driver's License or ID Card)</li>
+                        <li>Social Security Number (SSN) for tax reconciliation</li>
+                        <li>Proof of residency for the applicable refund period</li>
+                    </ul>
                 </div>
 
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Confirmação e Saque</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Após a verificação, o sistema indicará o valor disponível. Siga para a etapa de transferência bancária.</p>
-                    </div>
-                </div>
-
-                <div style="margin-top: var(--spacing-lg); text-align: center;">
-                    <button class="btn-cta" style="width: 100%;">Abrir Portal de Reembolsos <i class="fas fa-external-link-alt"></i></button>
-                    <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);"><i class="fas fa-info-circle"></i> O portal abrirá em uma nova aba.</p>
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
+                    <a href="/hub.html" style="color: var(--text-muted); text-decoration: none; font-weight: 700;">
+                        <i class="fas fa-arrow-left"></i> Back to Dashboard
+                    </a>
+                    <a href="/paypal-now.html" class="btn-cta">
+                        Setup Payout Now <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <script src="/src/components.js"></script>
