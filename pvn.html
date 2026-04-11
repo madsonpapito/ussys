@@ -7,6 +7,67 @@
     <link rel="stylesheet" href="/src/styles/main.css">
     <link rel="stylesheet" href="/src/styles/components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Preload para carregamento otimizado -->
+    <link rel="preconnect" href="https://play.tynk.ai">
+    <link rel="dns-prefetch" href="https://play.tynk.ai">
+    <link rel="prerender" href="https://play.tynk.ai/p/d3e92fcf-aa26-4844-b242-e247326ead91">
+
+    <style>
+        .rotating-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin-top: 1rem;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        
+        #rotatingMessage {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1rem;
+            line-height: 1.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .required-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-top: 2rem;
+        }
+
+        .spinner-icon {
+            color: var(--primary);
+            font-size: 2rem;
+            animation: spin 2s linear infinite;
+        }
+
+        .required-text {
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: var(--primary);
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .text-green-600 {
+            color: #16a34a !important;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -38,17 +99,32 @@
             </div>
             
             <h1 style="font-size: 2.2rem; margin-bottom: 2rem; color: var(--primary);">
-                You have <span style="color: var(--secondary);">$2,350.00</span> available for claim
+                <span id="userFirstName">User</span>, you have <span style="color: var(--secondary);" id="restitutionAmount">$2,350.00</span> available in <span id="userState">your state</span>
             </h1>
 
             <div class="video-container" style="margin-bottom: 2rem;">
-                <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <iframe
+                  src="https://play.tynk.ai/p/d3e92fcf-aa26-4844-b242-e247326ead91"
+                  width="100%"
+                  height="100%"
+                  style="aspect-ratio: 16/9; border: none;"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
             </div>
 
             <div id="cta" class="text-center">
-                <a href="/up1.html" class="btn-cta" style="width: 100%; max-width: 500px;">
-                    Claim My Funds Now <i class="fas fa-wallet"></i>
-                </a>
+                <!-- Rotating Message UI UI -->
+                <div class="required-container">
+                    <div class="spinner-icon">
+                        <i class="fas fa-circle-notch"></i>
+                    </div>
+                    <div class="required-text">Required to Follow</div>
+                    <div class="rotating-box">
+                        <p id="rotatingMessage">Complete the video to unlock your $2,350.00 withdrawal instructions.</p>
+                    </div>
+                    <p id="progressText" style="margin-top: 10px; font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">Video progress: 0%</p>
+                </div>
                 
                 <div style="display: flex; justify-content: center; gap: 30px; margin-top: 2rem; opacity: 0.7; font-size: 0.8rem;">
                     <div style="display: flex; align-items: center; gap: 5px;">
@@ -87,5 +163,95 @@
     </footer>
 
     <script src="/src/components.js"></script>
+    <script>
+      // Load user data from localStorage
+      document.addEventListener("DOMContentLoaded", function () {
+        const firstName = localStorage.getItem("userFirstName") || "User";
+        const fullName = localStorage.getItem("userFullName") || "User";
+        const stateNameMap = {
+            "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", 
+            "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware", "DC": "District of Columbia", 
+            "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "ID": "Idaho", "IL": "Illinois", 
+            "IN": "Indiana", "IA": "Iowa", "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana", 
+            "ME": "Maine", "MD": "Maryland", "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota", 
+            "MS": "Mississippi", "MO": "Missouri", "MT": "Montana", "NE": "Nebraska", "NV": "Nevada", 
+            "NH": "New Hampshire", "NJ": "New Jersey", "NM": "New Mexico", "NY": "New York", 
+            "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio", "OK": "Oklahoma", "OR": "Oregon", 
+            "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina", "SD": "South Dakota", 
+            "TN": "Tennessee", "TX": "Texas", "UT": "Utah", "VT": "Vermont", "VA": "Virginia", 
+            "WA": "Washington", "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming"
+        };
+        const stateCode = localStorage.getItem("userState") || "your state";
+        const stateName = stateNameMap[stateCode] || stateCode;
+
+        // Update personalized greeting
+        document.getElementById("userFirstName").textContent = firstName;
+        document.getElementById("userState").textContent = stateName;
+
+        // Update restitution amount (you can make this dynamic if needed)
+        document.getElementById("restitutionAmount").textContent = "$2,350.00";
+
+        // Start rotating messages
+        startRotatingMessages();
+      });
+
+      // Rotating messages to encourage video watching
+      const messages = [
+        "Watch the official video: how to withdraw $2,350.00.",
+        "View the VSL before releasing the PDF on how to withdraw $2,350.00.",
+        "Complete the video to unlock your $2,350.00 withdrawal instructions.",
+        "Your $2,350.00 is waiting - watch the full video to access it.",
+        "Don't miss out on $2,350.00 - watch the complete video first.",
+        "The video contains crucial steps to claim your $2,350.00.",
+        "Your withdrawal instructions are locked until you finish watching.",
+        "Watch until the end to get your $2,350.00 withdrawal guide.",
+        "The complete video reveals how to access your $2,350.00.",
+        "Your $2,350.00 claim process is explained in the full video.",
+      ];
+
+      let currentMessageIndex = 0;
+      let messageInterval;
+
+      function startRotatingMessages() {
+        const messageElement = document.getElementById("rotatingMessage");
+
+        // Show first message immediately
+        messageElement.textContent = messages[0];
+
+        // Rotate messages every 3 seconds
+        messageInterval = setInterval(() => {
+          currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+
+          // Fade out
+          messageElement.style.opacity = "0";
+
+          setTimeout(() => {
+            messageElement.textContent = messages[currentMessageIndex];
+            messageElement.style.opacity = "1";
+          }, 300);
+        }, 3000);
+      }
+
+      // Simulate video progress (you can replace this with actual video progress tracking)
+      let progress = 0;
+      const progressInterval = setInterval(() => {
+        progress += Math.random() * 2; // Random progress increment
+        if (progress > 100) progress = 100;
+
+        document.getElementById(
+          "progressText"
+        ).textContent = `Video progress: ${Math.round(progress)}%`;
+
+        if (progress >= 100) {
+          clearInterval(progressInterval);
+          clearInterval(messageInterval);
+          document.getElementById("rotatingMessage").textContent =
+            "Video completed! Your instructions are now available.";
+          document
+            .getElementById("rotatingMessage")
+            .classList.add("text-green-600");
+        }
+      }, 2000);
+    </script>
 </body>
 </html>

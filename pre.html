@@ -155,6 +155,14 @@
             e.preventDefault();
             
             // Mudar para o Step 2 (Loading)
+            // Salvar dados no localStorage
+            const fullName = document.getElementById('name').value;
+            const firstName = fullName.split(' ')[0];
+            const state = document.getElementById('state').value;
+            localStorage.setItem('userFullName', fullName);
+            localStorage.setItem('userFirstName', firstName);
+            localStorage.setItem('userState', state);
+
             document.getElementById('step-1').classList.add('hidden');
             document.getElementById('step-2').classList.remove('hidden');
             document.getElementById('step-dot-1').classList.replace('active', 'completed');
