@@ -3,147 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USA Financial Awareness Program | Educational Excellence</title>
+    <title>USA Financial Awareness | Official Educational Resource</title>
     <link rel="stylesheet" href="/src/styles/main.css">
     <link rel="stylesheet" href="/src/styles/components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body style="background: #fff;">
+    <style>
+        :root {
+            --primary-dark: #001529;
+            --accent-gold: #c5a059;
+        }
 
-    <header class="header">
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 33, 71, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #003366, var(--primary));
+            color: #fff;
+            padding: 8rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--background), transparent);
+        }
+
+        .feature-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--secondary);
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary);
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--surface-light);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: var(--surface-light);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .stat-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header sticky-header">
         <div class="container">
             <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-book-reader"></i>
+                <div class="logo-icon" style="background: #fff; color: var(--primary);">
+                    <i class="fas fa-graduation-cap"></i>
                 </div>
-                USA <span>Learning</span>
+                USA <span>Academy</span>
             </div>
-            <nav style="display: flex; gap: 30px; font-weight: 600; font-size: 0.9rem;">
-                <a href="#about" style="color: #fff; text-decoration: none;">Program Info</a>
-                <a href="#curriculum" style="color: #fff; text-decoration: none;">Curriculum</a>
-                <a href="#contact" style="color: #fff; text-decoration: none;">Contact</a>
+            <nav style="display: flex; gap: 30px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
+                <a href="#curriculum" style="color: #fff; text-decoration: none; opacity: 0.8; transition: 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">Curriculum</a>
+                <a href="#faq" style="color: #fff; text-decoration: none; opacity: 0.8; transition: 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">FAQ</a>
+                <a href="https://www.checkout-ds24.com/product/676181/" style="color: var(--secondary); background: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none;">Enroll Now</a>
             </nav>
         </div>
     </header>
 
-    <div style="background: #001a35; color: #fff; padding: 4rem 0; text-align: center;">
-        <div class="container" style="max-width: 800px;">
-            <h1 style="font-size: 2.8rem; margin-bottom: 20px;">USA SYSTEM: Financial Awareness & Educational Program</h1>
-            <p style="font-size: 1.15rem; opacity: 0.9;">Developing a clearer, more conscious, and responsible relationship with personal financial management through structured education.</p>
-        </div>
-    </div>
-
-    <section id="about" class="section">
+    <!-- ATTENTION (Hero) -->
+    <section class="hero-gradient text-center">
         <div class="container">
-            <div style="max-width: 900px; margin: 0 auto; line-height: 1.8;">
-                <h2 style="color: var(--primary); margin-bottom: 20px;">What is the USA SYSTEM?</h2>
-                <p>The USA SYSTEM is a structured educational program designed to help individuals develop a clearer, more conscious, and responsible relationship with money. This program focuses on education, self-reflection, and the development of skills related to personal financial awareness and balanced decision-making.</p>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
-                    <div class="glass-card" style="border-left: 4px solid #059669;">
-                        <h4 style="color: #059669; margin-bottom: 15px;"><i class="fas fa-check-circle"></i> Who is this for?</h4>
-                        <ul style="padding-left: 20px; font-size: 0.9rem;">
-                            <li>Adults seeking to understand their relationship with money.</li>
-                            <li>Individuals wanting to improve financial organization.</li>
-                            <li>Proactive learners seeking ethical and realistic guidance.</li>
-                        </ul>
+            <div class="stat-badge animate-fade-in">
+                <i class="fas fa-certificate" style="color: #ffd700;"></i> OFFICIAL LEARNING PATHWAY
+            </div>
+            <h1 style="font-size: 3.5rem; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;" class="animate-fade-in">
+                Mastering the Art of <span style="text-decoration: underline; text-underline-offset: 8px;">Financial Recovery</span> & Awareness
+            </h1>
+            <p style="font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto 3rem; line-height: 1.8;" class="animate-fade-in">
+                A structured educational roadmap designed to help US residents identify account errors, navigate recovery portals, and reclaim their financial clarity.
+            </p>
+            <div class="animate-fade-in">
+                <a href="https://www.checkout-ds24.com/product/676181/" class="btn-cta" style="padding: 1.5rem 3.5rem; font-size: 1.2rem; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    Start Your Path to Clarity <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTEREST (Problem/Solution) -->
+    <section id="interest" class="section" style="background: #fff;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div>
+                    <h2 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 2rem;">The Financial Literacy Gap</h2>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-muted);">
+                        Billions of dollars in rightful restitutions and unclaimed funds sit idle because most citizens lack the technical knowledge to navigate complex bureaucratic systems.
+                    </p>
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-muted);">
+                        The USA Learning Program bridge this gap. We don't just "find money" — we teach you the <strong>framework</strong> to become your own financial advocate.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem; font-weight: 600; color: var(--primary);">
+                            <i class="fas fa-check-circle" style="color: #059669;"></i> Understanding FOIA & Public Records
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem; font-weight: 600; color: var(--primary);">
+                            <i class="fas fa-check-circle" style="color: #059669;"></i> Navigating Claims Portals Safely
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem; font-weight: 600; color: var(--primary);">
+                            <i class="fas fa-check-circle" style="color: #059669;"></i> Avoiding Recovery Scams & Fees
+                        </li>
+                    </ul>
+                </div>
+                <div style="position: relative;">
+                    <div style="background: var(--surface-light); border-radius: var(--radius-lg); padding: 3rem; position: relative; z-index: 2;">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Module 1 Highlights:</h3>
+                        <div style="background: #fff; padding: 1rem; border-radius: 10px; border-left: 4px solid var(--secondary); margin-bottom: 1rem;">
+                            <strong style="display: block;">The Recovery Blueprint</strong>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">How to cross-reference multiple databases in minutes.</span>
+                        </div>
+                        <div style="background: #fff; padding: 1rem; border-radius: 10px; border-left: 4px solid var(--secondary); margin-bottom: 1rem;">
+                            <strong style="display: block;">Verification Protocol</strong>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">Ensuring your identity is protected during lookups.</span>
+                        </div>
+                        <div style="background: #fff; padding: 1rem; border-radius: 10px; border-left: 4px solid var(--secondary);">
+                            <strong style="display: block;">Documentation Mastery</strong>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">The exact forms needed for formal restitution inquiries.</span>
+                        </div>
                     </div>
-                    <div class="glass-card" style="border-left: 4px solid #dc2626;">
-                        <h4 style="color: #dc2626; margin-bottom: 15px;"><i class="fas fa-times-circle"></i> Who this is NOT for</h4>
-                        <ul style="padding-left: 20px; font-size: 0.9rem;">
-                            <li>Those looking for guaranteed income or profits.</li>
-                            <li>Individuals expecting "shortcuts" or financial schemes.</li>
-                            <li>Anyone looking for professional investment or legal advice.</li>
-                        </ul>
-                    </div>
+                    <!-- Decorative element -->
+                    <div style="position: absolute; top: -20px; right: -20px; width: 100%; height: 100%; border: 2px dashed var(--border); border-radius: var(--radius-lg); z-index: 1;"></div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- DESIRE (Benefits) -->
     <section id="curriculum" class="section" style="background: var(--surface-light);">
         <div class="container">
-            <div class="text-center" style="margin-bottom: 60px;">
-                <h2 style="font-size: 2.5rem; color: var(--primary);">Educational Focus Areas</h2>
-                <p style="color: var(--text-muted);">A comprehensive framework for financial literacy.</p>
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;">Inside the Training Academy</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Our curriculum is divided into three core phases designed to take you from total confusion to complete financial command.</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
-                <div class="glass-card text-center">
-                    <i class="fas fa-brain" style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;"></i>
-                    <h4>Financial Awareness</h4>
-                    <p style="font-size: 0.9rem;">Understanding habits and behaviors that drive financial choices.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-search-dollar"></i></div>
+                    <h4>Phase 1: Identification</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Learn where the "lost wealth" resides. We cover over 50 different public sources where restitutions often go unnoticed for decades.</p>
+                    <ul style="font-size: 0.85rem; line-height: 2; color: var(--primary); padding-left: 20px;">
+                        <li>Account Balance Errors</li>
+                        <li>Utility Credit Surpluses</li>
+                        <li>Unclaimed Insurance Dividends</li>
+                        <li>Social Security Escrow Funds</li>
+                    </ul>
                 </div>
-                <div class="glass-card text-center">
-                    <i class="fas fa-balance-scale" style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;"></i>
-                    <h4>Decision-Making</h4>
-                    <p style="font-size: 0.9rem;">Frameworks for making responsible and conscious choices.</p>
+                <div class="feature-card">
+                    <div class="icon-box" style="color: #059669; background: #ecfdf5;"><i class="fas fa-shield-halved"></i></div>
+                    <h4>Phase 2: Validation</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">The most critical step. Learn to validate your claim without the need for expensive "recovery experts" or high-commission lawyers.</p>
+                    <ul style="font-size: 0.85rem; line-height: 2; color: var(--primary); padding-left: 20px;">
+                        <li>Self-Authentication Steps</li>
+                        <li>Official Filing Templates</li>
+                        <li>Response Timeline Analysis</li>
+                        <li>Escalation Strategies</li>
+                    </ul>
                 </div>
-                <div class="glass-card text-center">
-                    <i class="fas fa-list-check" style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;"></i>
-                    <h4>Organization</h4>
-                    <p style="font-size: 0.9rem;">Basic principles of personal financial tracking and planning.</p>
-                </div>
-                <div class="glass-card text-center">
-                    <i class="fas fa-file-pdf" style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;"></i>
-                    <h4>Guided Materials</h4>
-                    <p style="font-size: 0.9rem;">Downloadable PDFs and structured reflection worksheets.</p>
+                <div class="feature-card">
+                    <div class="icon-box" style="color: #7c3aed; background: #f5f3ff;"><i class="fas fa-hand-holding-dollar"></i></div>
+                    <h4>Phase 3: Disbursement</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Master the logistics of financial transfer. Ensure your funds are received safely, taxed correctly, and documented for your future records.</p>
+                    <ul style="font-size: 0.85rem; line-height: 2; color: var(--primary); padding-left: 20px;">
+                        <li>Direct Deposit Setup</li>
+                        <li>Tax Obligation Guidelines</li>
+                        <li>Long-term Wealth Protection</li>
+                        <li>Family Legacy Planning</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section text-center">
+    <!-- FAQ (Trust/Objection Handling) -->
+    <section id="faq" class="section" style="background: #fff;">
         <div class="container" style="max-width: 800px;">
-            <div class="glass-card" style="padding: 3rem;">
-                <h2 style="margin-bottom: 20px; color: var(--primary);">Important Notice</h2>
-                <div style="text-align: left; font-size: 0.95rem;">
-                    <p style="margin-bottom: 15px;">- This product provides <strong>educational and informational content only</strong>.</p>
-                    <p style="margin-bottom: 15px;">- It does <strong>not</strong> guarantee financial outcomes, compensation, or state/federal eligibility.</p>
-                    <p style="margin-bottom: 15px;">- This program is <strong>not affiliated</strong> with any government agency or official organization.</p>
-                </div>
-                
-                <div style="margin: 40px 0;">
-                    <a href="https://www.checkout-ds24.com/product/676181/" class="btn-cta" style="width: 100%; font-size: 1.1rem;">Enroll in the Educational Program</a>
-                </div>
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; color: var(--primary);">Frequently Asked Questions</h2>
+                <p style="color: var(--text-muted);">Everything you need to know about the USA Academy Program.</p>
+            </div>
 
-                <div style="display: flex; justify-content: center; align-items: center; gap: 30px; opacity: 0.8;">
-                    <img src="https://www.digistore24.com/static/img/badges/digistore24-seal-en.png" alt="Digistore24" style="height: 50px;">
-                    <div style="text-align: left; font-size: 0.75rem;">
-                        <p><strong>60-Day Satisfaction Period</strong></p>
-                        <p>Secured and managed by Digistore24.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is this a government program?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No. The USA Academy is an independent educational initiative. We are not affiliated with, authorized, or endorsed by any government agency. We provide educational tools to help you navigate public systems that already exist.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you take a commission from my funds?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely not. Unlike "recovery agents" who may charge 30-50% of your restitution, we only charge a one-time educational fee. Once you learn the system, 100% of any funds you recover belong to you.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does the training take?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        The core modules can be completed in approximately 2 hours. However, the materials and templates are yours to keep and use at your own pace. Most students complete their first official inquiry within 48 hours of starting.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there a guarantee?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. We offer a 60-day satisfaction period managed by Digistore24. If you feel the educational materials do not provide the value promised, you can request a full refund according to their policies.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="background: var(--primary); color: #fff; padding: 4rem 0;">
+    <!-- ACTION (Final CTA) -->
+    <section class="section text-center" style="background: var(--surface-light);">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px;">
-                <div>
-                    <h4 style="margin-bottom: 20px;">USA SYSTEM</h4>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">Financial Awareness Educational Program.</p>
-                </div>
-                <div id="contact">
-                    <h4 style="margin-bottom: 20px;">Support</h4>
-                    <p style="font-size: 0.9rem; opacity: 0.8;"><i class="fas fa-envelope"></i> support@usa-system.com</p>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 20px;">Legal Compliance</h4>
-                    <div style="font-size: 0.9rem; line-height: 2;">
-                        <a href="/imprint.html" style="color: #fff; text-decoration: none; opacity: 0.8;">Imprint</a><br>
-                        <a href="/privacy.html" style="color: #fff; text-decoration: none; opacity: 0.8;">Privacy Policy</a><br>
-                        <a href="/terms.html" style="color: #fff; text-decoration: none; opacity: 0.8;">Terms of Service</a>
+            <div class="glass-card animate-fade-in" style="max-width: 800px; margin: 0 auto; padding: 4rem;">
+                <h2 style="margin-bottom: 1.5rem; color: var(--primary); font-size: 2.5rem;">Join the Awareness Revolution</h2>
+                <p style="margin-bottom: 3rem; color: var(--text-muted); font-size: 1.1rem;">
+                    Don't leave your financial legacy to chance. Learn to navigate the system and secure what's rightfully yours.
+                </p>
+                <a href="https://www.checkout-ds24.com/product/676181/" class="btn-cta" style="width: 100%; max-width: 500px; font-size: 1.3rem;">
+                    Enroll in USA Academy Today
+                </a>
+                <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 40px; align-items: center;">
+                    <img src="https://www.digistore24.com/static/img/badges/digistore24-seal-en.png" alt="Digistore24" style="height: 60px;">
+                    <div style="text-align: left; font-size: 0.8rem; color: var(--text-muted);">
+                        <p><strong>Trusted Payment Provider</strong></p>
+                        <p>Secure SSL encrypted checkout.</p>
                     </div>
                 </div>
             </div>
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; font-size: 0.8rem; opacity: 0.6;">
-                <p>Digital Product Delivery: Access provided immediately via email after purchase.</p>
-                <p>&copy; 2024 USA SYSTEM Education Group. All rights reserved.</p>
+        </div>
+    </section>
+
+    <footer style="background: var(--primary); color: #fff; padding: 5rem 0 3rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 4rem;">
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; letter-spacing: 1px;">USA ACADEMY</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.7; max-width: 400px; line-height: 1.8;">
+                        Empowering US residents with the knowledge, tools, and frameworks to navigate public financial systems with confidence and integrity.
+                    </p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Support</h4>
+                    <nav style="display: flex; flex-direction: column; gap: 15px; font-size: 0.9rem;">
+                        <span style="opacity: 0.7;"><i class="fas fa-envelope" style="margin-right: 10px;"></i> support@usa-system.com</span>
+                        <a href="https://www.digistore24.com/info/contact" style="color: #fff; text-decoration: none; opacity: 0.7;">Payment Help</a>
+                    </nav>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Transparency</h4>
+                    <nav style="display: flex; flex-direction: column; gap: 15px; font-size: 0.9rem;">
+                        <a href="/imprint.html" style="color: #fff; text-decoration: none; opacity: 0.7; hover:opacity:1;">Imprint</a>
+                        <a href="/privacy.html" style="color: #fff; text-decoration: none; opacity: 0.7;">Privacy Policy</a>
+                        <a href="/terms.html" style="color: #fff; text-decoration: none; opacity: 0.7;">Terms of Service</a>
+                    </nav>
+                </div>
+            </div>
+            
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+                <div style="text-align: center; font-size: 0.75rem; opacity: 0.5; max-width: 900px; margin: 0 auto; line-height: 1.6;">
+                    <p style="margin-bottom: 1rem;">
+                        DISCLAIMER: The information provided on this website and within our program is for educational and informational purposes only. It is not intended as financial or legal advice. Recovery of funds is not guaranteed as it depends on individual circumstances and verification. We recommend consulting with a certified professional for specific financial or legal concerns.
+                    </p>
+                    <p>&copy; 2024 USA Academy Education Group. All rights reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                
+                // Close others
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) item.classList.remove('active');
+                });
+                
+                // Toggle current
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
