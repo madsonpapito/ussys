@@ -67,6 +67,22 @@
         .text-green-600 {
             color: #16a34a !important;
         }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .header { padding: 0.5rem 0; }
+            .logo { font-size: 1rem; }
+            .logo-icon { width: 32px; height: 32px; }
+            .official-bar { font-size: 0.8rem; padding: 0.5rem 0; }
+            .section { padding: 1rem 0; }
+            h1 { font-size: 1.5rem !important; margin-bottom: 0.75rem !important; }
+            .glass-card { padding: 1rem !important; }
+            .video-container { margin-bottom: 1rem !important; }
+            .required-container { margin-top: 0.5rem !important; }
+            .rotating-box { padding: 1rem; min-height: 60px; }
+            #rotatingMessage { font-size: 0.9rem; }
+            .discount-badge { display: none; } /* Hide fixed badge on mobile to save vertical space */
+        }
     </style>
 </head>
 <body>
