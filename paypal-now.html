@@ -3,63 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PayPal Now - USA System</title>
-    <link rel="stylesheet" href="/src/styles/main.css">
-    <link rel="stylesheet" href="/src/styles/components.css">
+    <title>Bonus Cash - USA System</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #3b82f6;
+            --text-dark: #0f172a;
+            --bg-light: #f8fafc;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #1e3a8a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            border: 2px dashed #1e3a8a;
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .logo-subtext {
+            display: block;
+            font-size: 0.8rem;
+            color: #ef4444;
+            font-weight: 700;
+        }
+
+        .page-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .main-card {
+            background: #fff;
+            width: 100%;
+            max-width: 700px;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .module-header {
+            background: var(--primary-blue);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 20px 10px; }
+            .page-title { font-size: 1.8rem; }
+            .main-card { padding: 15px; }
+        }
+    </style>
 </head>
-<body style="display: flex; background: #f1f5f9;">
-    
-    <!-- Sidebar será injetada aqui pelo components.js -->
-    <div id="sidebar-container"></div>
+<body>
 
-    <main style="flex: 1; padding: var(--spacing-lg); overflow-y: auto;">
-        <header style="margin-bottom: var(--spacing-lg);">
-            <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Module 01</span>
-            <h1  style="font-size: 2.5rem;">Guide: PayPal Now</h1>
-            <p style="color: var(--text-muted);">Follow the steps below to claim your refund today.</p>
-        </header>
-
-        <section style="max-width: 900px;">
-            <div class="video-container animate-fade-in" style="margin-bottom: var(--spacing-lg);">
-                <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <div class="header-logo">
+        <div class="logo-box">
+            <div class="logo-icon">
+                <i class="fas fa-dollar-sign"></i>
             </div>
-
-            <div class="glass-card animate-fade-in" style="animation-delay: 0.2s;">
-                <h2 style="margin-bottom: var(--spacing-md);">Operation Step-by-Step</h2>
-                
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Official Portal Access</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Access the official American refund system portal by clicking the link below the video.</p>
-                    </div>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Information Submittal</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Submit your basic information as guided in the video above to begin your eligibility verification.</p>
-                    </div>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Confirmation & Withdrawal</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Following verification, the system will specify your available amount. Proceed to the bank transfer phase.</p>
-                    </div>
-                </div>
-
-                <div style="margin-top: var(--spacing-lg); text-align: center;">
-                    <button class="btn-cta" style="width: 100%;">Open Refund Portal <i class="fas fa-external-link-alt"></i></button>
-                    <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);"><i class="fas fa-info-circle"></i> The portal will open in a new tab.</p>
-                </div>
+            <div class="logo-text">
+                REFUND
+                <span class="logo-subtext">SYSTEM</span>
             </div>
-        </section>
-    </main>
+        </div>
+        <h1 class="page-title">Bonus Cash</h1>
+    </div>
 
-    <script src="/src/components.js"></script>
+    <div class="main-card">
+        <!-- VIDEO 1 -->
+        <div class="module-header">
+            <i class="fas fa-play"></i> Video 1
+        </div>
+        <div class="video-wrapper">
+            <iframe src="https://play.tynk.ai/p/9b062533-a035-4273-9239-2de9e0131d60" allowfullscreen></iframe>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="module-header">
+            <i class="fas fa-play"></i> Video 2
+        </div>
+        <div class="video-wrapper">
+            <iframe src="https://play.tynk.ai/p/3268578c-aafa-4950-947b-a986b59098e8" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Refund System. All rights reserved.</p>
+    </div>
+
 </body>
 </html>

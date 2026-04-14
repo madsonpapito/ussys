@@ -4,62 +4,503 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicaid & Medicare Guide - USA System</title>
-    <link rel="stylesheet" href="/src/styles/main.css">
-    <link rel="stylesheet" href="/src/styles/components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body style="display: flex; background: #f1f5f9;">
-    
-    <!-- Sidebar será injetada aqui pelo components.js -->
-    <div id="sidebar-container"></div>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #f8fafc;
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --success: #059669;
+            --success-light: #ecfdf5;
+            --warning: #d97706;
+            --warning-light: #fff7ed;
+            --danger: #dc2626;
+            --danger-light: #fef2f2;
+            --purple: #7c3aed;
+            --purple-light: #f5f3ff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
 
-    <main style="flex: 1; padding: var(--spacing-lg); overflow-y: auto;">
-        <header style="margin-bottom: var(--spacing-lg);">
-            <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Module 01</span>
-            <h1  style="font-size: 2.5rem;">Guide: Medicaid & Medicare Guide</h1>
-            <p style="color: var(--text-muted);">Follow the steps below to claim your refund today.</p>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* --- Section Styling --- */
+        .section-box {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        /* --- Comparison Grid --- */
+        .comp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .comp-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            background: #fdfdfd;
+        }
+
+        .comp-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .comp-list { list-style: none; }
+        .comp-list li { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; display: flex; align-items: flex-start; gap: 8px; }
+        .comp-list li i { margin-top: 4px; font-size: 0.75rem; }
+
+        /* --- Medicaid Detail --- */
+        .blue-box {
+            background: var(--info-light);
+            border: 1px solid var(--secondary);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .table-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table td {
+            padding: 10px;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.8rem;
+        }
+
+        .data-table td:last-child { font-weight: 800; text-align: right; }
+
+        .checklist { list-style: none; }
+        .checklist li { background: white; padding: 10px 15px; border-radius: 6px; margin-bottom: 8px; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; gap: 10px; border: 1px solid var(--border); }
+        .checklist li i { color: var(--success); }
+
+        /* --- Medicare Cards --- */
+        .medicare-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .med-part-card {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .med-part-card h5 { font-size: 0.8rem; margin-bottom: 10px; color: var(--secondary); }
+        .med-part-card p { font-size: 0.65rem; color: var(--text-muted); line-height: 1.3; }
+        .med-part-badge { display: block; margin-top: 10px; font-size: 0.7rem; font-weight: 800; color: var(--primary); }
+
+        /* --- Calculator Section --- */
+        .calc-box {
+            background: var(--success-light);
+            border: 1px solid var(--success);
+            padding: 30px;
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .calc-display { background: white; padding: 20px; border-radius: 10px; border: 1px solid var(--border); }
+        .calc-item { margin-bottom: 15px; display: flex; justify-content: space-between; border-bottom: 1px dashed #cbd5e1; padding-bottom: 8px; }
+        .calc-item label { font-size: 0.8rem; font-weight: 700; }
+        .calc-item span { font-size: 0.8rem; font-weight: 800; color: var(--success); }
+
+        /* --- Common Mistakes --- */
+        .mistake-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .mistake-item {
+            background: var(--danger-light);
+            border: 1px solid var(--danger);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            color: #991b1b;
+        }
+
+        /* --- Footer --- */
+        .resource-footer {
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .res-group h4 { font-size: 0.95rem; margin-bottom: 20px; }
+        .res-link { display: block; text-decoration: none; color: var(--secondary); font-weight: 700; font-size: 0.85rem; margin-bottom: 15px; }
+        .res-link span { display: block; font-size: 0.7rem; color: var(--text-muted); font-weight: 400; }
+
+        @media (max-width: 768px) {
+            .comp-grid, .table-grid, .medicare-grid, .calc-box, .mistake-grid, .resource-footer { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- --- HERO --- -->
+        <header class="hero">
+            <div class="hero-icon"><i class="fas fa-heart-circle-bolt"></i></div>
+            <h1>Medicaid & Medicare Guide</h1>
+            <p>Learn how to maximize your health coverage, understanding the differences and how to apply for benefits.</p>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-value" style="color: var(--success);">80 Million</span>
+                    <span class="metric-label">Enrolled in Medicaid</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value" style="color: var(--secondary);">65 Million</span>
+                    <span class="metric-label">Enrolled in Medicare</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value" style="color: var(--warning);">$0 - $0</span>
+                    <span class="metric-label">Monthly Premiums Available</span>
+                </div>
+            </div>
         </header>
 
-        <section style="max-width: 900px;">
-            <div class="video-container animate-fade-in" style="margin-bottom: var(--spacing-lg);">
-                <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <!-- --- MEDICAID VS MEDICARE --- -->
+        <section class="section-box">
+            <div class="section-header">
+                <i class="fas fa-arrows-left-right" style="color: var(--purple);"></i>
+                <h2 class="section-title">Medicaid vs Medicare: What's the Difference?</h2>
             </div>
-
-            <div class="glass-card animate-fade-in" style="animation-delay: 0.2s;">
-                <h2 style="margin-bottom: var(--spacing-md);">Operation Step-by-Step</h2>
-                
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Official Portal Access</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Access the official American refund system portal by clicking the link below the video.</p>
-                    </div>
+            
+            <div class="comp-grid">
+                <div class="comp-card">
+                    <div class="comp-header" style="color: var(--success);"><i class="fas fa-heart"></i> Medicaid</div>
+                    <ul class="comp-list">
+                        <li><i class="fas fa-check"></i> For Low-Income individuals and families</li>
+                        <li><i class="fas fa-check"></i> State/Federal Program (Varies by state)</li>
+                        <li><i class="fas fa-check"></i> Broad Coverage with low/no costs</li>
+                        <li><i class="fas fa-check"></i> Assets/Income thresholds apply</li>
+                    </ul>
                 </div>
-
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Information Submittal</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Submit your basic information as guided in the video above to begin your eligibility verification.</p>
-                    </div>
-                </div>
-
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Confirmation & Withdrawal</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Following verification, the system will specify your available amount. Proceed to the bank transfer phase.</p>
-                    </div>
-                </div>
-
-                <div style="margin-top: var(--spacing-lg); text-align: center;">
-                    <button class="btn-cta" style="width: 100%;">Open Refund Portal <i class="fas fa-external-link-alt"></i></button>
-                    <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);"><i class="fas fa-info-circle"></i> The portal will open in a new tab.</p>
+                <div class="comp-card">
+                    <div class="comp-header" style="color: var(--secondary);"><i class="fas fa-user-doctor"></i> Medicare</div>
+                    <ul class="comp-list">
+                        <li><i class="fas fa-check"></i> For Seniors 65+ and those with disabilities</li>
+                        <li><i class="fas fa-check"></i> Federal Program (Same nationwide)</li>
+                        <li><i class="fas fa-check"></i> Defined parts (A, B, C, D)</li>
+                        <li><i class="fas fa-check"></i> Ages 65+ and ESRD/ALS disability</li>
+                    </ul>
                 </div>
             </div>
         </section>
-    </main>
 
-    <script src="/src/components.js"></script>
+        <!-- --- MEDICAID DETAIL --- -->
+        <section class="section-box">
+            <div class="section-header">
+                <i class="fas fa-house-medical" style="color: var(--success);"></i>
+                <h2 class="section-title">Medicaid: Free Health Insurance</h2>
+            </div>
+            <p style="font-size:0.85rem; color: var(--text-muted); margin-bottom:20px;">Medicaid provides health coverage to millions of Americans, including eligible low-income adults, children, pregnant women, elderly adults and people with disabilities. It is the largest source of health coverage in the US.</p>
+
+            <div class="blue-box">
+                <h4 style="margin-bottom: 20px; font-weight: 800; font-size: 0.95rem;">Medicaid Eligibility (2024)</h4>
+                <div class="table-grid">
+                    <div>
+                        <h5 style="font-size: 0.75rem; margin-bottom: 10px; text-transform:uppercase; color:var(--text-muted);">Income Limits (138% of FPL)</h5>
+                        <table class="data-table">
+                            <tr><td>1 Person</td><td>$20,783/Year</td></tr>
+                            <tr><td>2 Persons</td><td>$28,208/Year</td></tr>
+                            <tr><td>3 Persons</td><td>$35,632/Year</td></tr>
+                            <tr><td>4 Persons</td><td>$43,056/Year</td></tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h5 style="font-size: 0.75rem; margin-bottom: 10px; text-transform:uppercase; color:var(--text-muted);">Who Qualifies Automatically</h5>
+                        <ul class="checklist">
+                            <li><i class="fas fa-check-circle"></i> SSI Recipients</li>
+                            <li><i class="fas fa-check-circle"></i> Pregnant Women</li>
+                            <li><i class="fas fa-check-circle"></i> People with disabilities</li>
+                            <li><i class="fas fa-check-circle"></i> Foster care children</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-grid" style="margin-top:30px;">
+                <div>
+                    <h4 style="font-size:0.95rem; margin-bottom:15px; display:flex; align-items:center; gap:8px;"><i class="fas fa-briefcase-medical" style="color:var(--success);"></i> What Medicaid Covers</h4>
+                    <ul class="comp-list" style="columns: 2;">
+                        <li><i class="fas fa-check"></i> Doctor visits</li>
+                        <li><i class="fas fa-check"></i> Hospital stays</li>
+                        <li><i class="fas fa-check"></i> Family planning</li>
+                        <li><i class="fas fa-check"></i> Laboratory services</li>
+                        <li><i class="fas fa-check"></i> Mental health</li>
+                        <li><i class="fas fa-check"></i> Prescription drugs</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size:0.95rem; margin-bottom:15px;">2024 Application Overview</h4>
+                    <div class="comp-list">
+                        <li style="margin-bottom:15px;"><div><strong style="display:block; font-size:0.85rem; color:var(--text-main);">Online Application</strong><span style="font-size:0.7rem;">Fastest application method on HealthCare.gov.</span></div></li>
+                        <li style="margin-bottom:15px;"><div><strong style="display:block; font-size:0.85rem; color:var(--text-main);">Phone Application</strong><span style="font-size:0.7rem;">Expert help available via your state office.</span></div></li>
+                        <li><div><strong style="display:block; font-size:0.85rem; color:var(--text-main);">In-Person</strong><span style="font-size:0.7rem;">Visit your local DSS or DHHS office.</span></div></li>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- MEDICARE SECTION --- -->
+        <section class="section-box">
+            <div class="section-header">
+                <i class="fas fa-stethoscope" style="color: var(--secondary);"></i>
+                <h2 class="section-title">Medicare: Health Insurance for Seniors</h2>
+            </div>
+            
+            <div class="medicare-grid">
+                <div class="med-part-card">
+                    <h5>Part A</h5>
+                    <p>Hospital Insurance (Inpatient care, hospice, some home healthcare)</p>
+                    <span class="med-part-badge">Usually $0/Mo</span>
+                </div>
+                <div class="med-part-card">
+                    <h5>Part B</h5>
+                    <p>Medical Insurance (Doctor visits, outpatient care, medical equipment)</p>
+                    <span class="med-part-badge">~$174.70/Mo</span>
+                </div>
+                <div class="med-part-card">
+                    <h5>Part C</h5>
+                    <p>Medicare Advantage (Private plans that combine A/B, and usually Part D)</p>
+                    <span class="med-part-badge">Varies</span>
+                </div>
+                <div class="med-part-card">
+                    <h5>Part D</h5>
+                    <p>Drug Coverage (Private plans that help cover costs of prescriptions)</p>
+                    <span class="med-part-badge">$0 - $100+/Mo</span>
+                </div>
+            </div>
+
+            <div class="blue-box" style="background:#fefce8; border-color:#eab308; margin-bottom:0;">
+                <h4 style="margin-bottom: 20px; font-weight: 800; font-size: 0.95rem;">Medicare Eligibility & Enrollment</h4>
+                <div class="table-grid">
+                    <div>
+                        <h5 style="font-size:0.8rem; margin-bottom:12px;">Automatic Enrollment</h5>
+                        <ul class="checklist" style="background:transparent; border:none; padding:0;">
+                            <li style="background:white; border-color:#fefce8;"><i class="fas fa-check-circle" style="color:var(--warning);"></i> Ages 65 and already receiving SS or RRB</li>
+                            <li style="background:white; border-color:#fefce8;"><i class="fas fa-check-circle" style="color:var(--warning);"></i> Disability - after 24 months of disability benefits</li>
+                            <li style="background:white; border-color:#fefce8;"><i class="fas fa-check-circle" style="color:var(--warning);"></i> ALS/ESRD - automatic at time of diagnosis</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 style="font-size:0.8rem; margin-bottom:12px;">Enrollment Periods</h5>
+                        <ul class="comp-list">
+                            <li><i class="fas fa-clock" style="color:var(--warning);"></i> <strong>Initial (7 Months)</strong>: 3 months before to 3 after age 65</li>
+                            <li><i class="fas fa-calendar" style="color:var(--warning);"></i> <strong>General (Jan-Mar)</strong>: For missed Initial period</li>
+                            <li><i class="fas fa-star" style="color:var(--warning);"></i> <strong>Special</strong>: Based on life events (job loss/move)</li>
+                            <li><i class="fas fa-sync" style="color:var(--warning);"></i> <strong>Open (Oct 15 - Dec 7)</strong>: Switch plans annually</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- CALCULATOR --- -->
+        <section class="section-box calc-box">
+            <div>
+                <h4 style="font-size:1.1rem; margin-bottom:20px; display:flex; align-items:center; gap:10px;"><i class="fas fa-calculator"></i> Medicare Cost Calculator</h4>
+                <div class="calc-display">
+                    <div class="calc-item"><label>Part A Premium</label><span>$0</span></div>
+                    <div class="calc-item"><label>Part B Premium</label><span>$174.70</span></div>
+                    <div class="calc-item"><label>Part D (Avg)</label><span>$34.50 +</span></div>
+                    <div class="calc-item" style="border:none; margin:0;"><label>Medigap (Avg)</label><span>$150 - $250 +</span></div>
+                </div>
+            </div>
+            <div>
+                <h4 style="font-size:1.1rem; margin-bottom:20px;">Ways to Save Money</h4>
+                <div class="comp-list">
+                    <li style="margin-bottom:15px;"><i class="fas fa-piggy-bank" style="color:var(--success);"></i> <div><strong>Extra Help (LIS)</strong><p style="font-size:0.75rem;">Get help with Part D drug costs (FPL limits apply).</p></div></li>
+                    <li style="margin-bottom:15px;"><i class="fas fa-heart-pulse" style="color:var(--success);"></i> <div><strong>Medicaid Dual Eligibility</strong><p style="font-size:0.75rem;">If qualified for both, Medicaid covers your Medicare costs.</p></div></li>
+                    <li><i class="fas fa-magnifying-glass" style="color:var(--success);"></i> <div><strong>Compare Plans</strong><p style="font-size:0.75rem;">Check Part C (Advantage) plans annually via Medicare.gov.</p></div></li>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- PRO TIPS --- -->
+        <section class="section-box">
+            <div class="section-header">
+                <i class="fas fa-lightbulb" style="color: var(--warning);"></i>
+                <h2 class="section-title">Pro Tips to Maximize Your Benefits</h2>
+            </div>
+            <div class="medicare-grid" style="grid-template-columns: 1fr 1fr; gap:25px;">
+                <div class="tip-item">
+                    <i class="fas fa-calendar-check" style="color:var(--secondary);"></i>
+                    <div class="tip-content"><h6>Don't Miss Enrollment Deadlines</h6><p>Missing Part B or Part D initial enrollment can lead to permanent penalties.</p></div>
+                </div>
+                <div class="tip-content" style="display:flex; gap:12px;">
+                    <i class="fas fa-magnifying-glass" style="color:var(--secondary);"></i>
+                    <div><h6>Compare Plans Annually</h6><p>Review your coverage during the Open Enrollment period (Oct 15 - Dec 7).</p></div>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-file-medical" style="color:var(--secondary);"></i>
+                    <div class="tip-content"><h6>Keep Medical Records</h6><p>Organize your medical paperwork and expenses for easier applications.</p></div>
+                </div>
+                <div class="tip-content" style="display:flex; gap:12px;">
+                    <i class="fas fa-phone-alt" style="color:var(--secondary);"></i>
+                    <div><h6>Use Free Resources</h6><p>Use resources like Medicare.gov or SHIP state-provided counseling.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- MISTAKES --- -->
+        <section class="section-box">
+            <div class="section-header">
+                <i class="fas fa-triangle-exclamation" style="color: var(--danger);"></i>
+                <h2 class="section-title" style="color: var(--danger);">Common Mistakes to Avoid</h2>
+            </div>
+            <div class="mistake-grid">
+                <div class="mistake-item">Missing the enrollment deadlines, resulting in lifelong premium surcharges.</div>
+                <div class="mistake-item">Assuming Medicare covers everything (it doesn't cover dental, vision, or long-term care).</div>
+                <div class="mistake-item">Not checking if your preferred doctors are in your plan's network.</div>
+                <div class="mistake-item">Not reporting life changes (income/household) which affects Medicaid eligibility.</div>
+            </div>
+        </section>
+
+        <!-- --- FOOTER --- -->
+        <footer class="resource-footer">
+            <div class="res-group">
+                <h4>Medicaid Resources</h4>
+                <a href="https://www.medicaid.gov" target="_blank" class="res-link">Medicaid.gov<span>Official national portal for Medicaid info.</span></a>
+                <a href="#" class="res-link">State Office Locator<span>Find your local Medicaid application office.</span></a>
+            </div>
+            <div class="res-group">
+                <h4>Medicare Resources</h4>
+                <a href="https://www.medicare.gov" target="_blank" class="res-link">Medicare.gov<span>The primary portal for plan comparison.</span></a>
+                <a href="tel:18006334227" class="res-link">1-800-MEDICARE (1-800-633-4227)<span>Official national help line.</span></a>
+            </div>
+            <div style="grid-column: 1 / -1; margin-top: 20px; text-align: center; font-size: 0.75rem; color: var(--text-muted); border-top:1px solid var(--border); padding-top:20px;">
+                &copy; 2024 Health Benefits Guide. Not an official government website.
+            </div>
+        </footer>
+
+    </div>
+
 </body>
 </html>

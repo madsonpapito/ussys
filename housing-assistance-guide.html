@@ -4,62 +4,632 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Housing Assistance Guide - USA System</title>
-    <link rel="stylesheet" href="/src/styles/main.css">
-    <link rel="stylesheet" href="/src/styles/components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body style="display: flex; background: #f1f5f9;">
-    
-    <!-- Sidebar será injetada aqui pelo components.js -->
-    <div id="sidebar-container"></div>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #f8fafc;
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --success: #059669;
+            --success-light: #ecfdf5;
+            --warning: #d97706;
+            --warning-light: #fffbeb;
+            --info: #0ea5e9;
+            --info-light: #f0f9ff;
+            --danger: #dc2626;
+            --danger-light: #fef2f2;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
 
-    <main style="flex: 1; padding: var(--spacing-lg); overflow-y: auto;">
-        <header style="margin-bottom: var(--spacing-lg);">
-            <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Module 01</span>
-            <h1  style="font-size: 2.5rem;">Guide: Housing Assistance Guide</h1>
-            <p style="color: var(--text-muted);">Follow the steps below to claim your refund today.</p>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .metric-card i {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .metric-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        /* --- Section Styling --- */
+        .section-box {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* --- Program Cards --- */
+        .prog-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            background: #fdfdfd;
+        }
+
+        .prog-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-weight: 800;
+            font-size: 0.95rem;
+        }
+
+        .prog-list {
+            list-style: none;
+        }
+
+        .prog-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .prog-list li i {
+            margin-top: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* --- Eligibility Showcase --- */
+        .eligibility-box {
+            background: var(--info-light);
+            border: 1px solid var(--info);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .eligibility-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+        }
+
+        .elig-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .elig-table td {
+            padding: 10px;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.85rem;
+        }
+
+        .elig-table td:last-child {
+            font-weight: 800;
+            text-align: right;
+        }
+
+        .elig-checklist {
+            list-style: none;
+        }
+
+        .elig-checklist li {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .elig-checklist li i { color: var(--success); }
+
+        /* --- Process Row --- */
+        .process-row {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .step-vertical {
+            list-style: none;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .step-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--success-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--success);
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .step-content h5 {
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        .step-content p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Application Split --- */
+        .apply-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .doc-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .doc-box h4 {
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .doc-list {
+            list-style: none;
+            font-size: 0.85rem;
+        }
+
+        .doc-list li {
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .doc-list li::before {
+            content: '-';
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- Tips Grid --- */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .tip-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .tip-info h5 {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .tip-info p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* --- Videos --- */
+        .video-guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .video-guide-card {
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .video-guide-card h5 {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .video-guide-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .btn-video {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: white;
+            transition: opacity 0.2s;
+        }
+
+        .btn-video:hover { opacity: 0.9; }
+
+        /* --- Resources --- */
+        .resource-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .res-group h4 { font-size: 1rem; margin-bottom: 20px; }
+        .res-link { display: block; margin-bottom: 15px; text-decoration: none; color: var(--secondary); font-weight: 700; font-size: 0.9rem; }
+        .res-link span { display: block; font-size: 0.7rem; color: var(--text-muted); font-weight: 400; }
+
+        @media (max-width: 768px) {
+            .grid-2, .eligibility-grid, .process-row, .apply-grid, .tips-grid, .video-guide-grid, .resource-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- --- HERO --- -->
+        <header class="hero">
+            <div class="hero-icon"><i class="fas fa-home"></i></div>
+            <h1>Housing Assistance Guide</h1>
+            <p>Learn about Section 8, public housing, and other programs that can help you find affordable housing.</p>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <i class="fas fa-users" style="color: var(--secondary);"></i>
+                    <span class="metric-value">2.2 Million</span>
+                    <span class="metric-label">Families using Section 8</span>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-building" style="color: var(--success);"></i>
+                    <span class="metric-value">1.1 Million</span>
+                    <span class="metric-label">Public Housing Units</span>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-dollar-sign" style="color: var(--warning);"></i>
+                    <span class="metric-value">30%</span>
+                    <span class="metric-label">Max Rent Payment</span>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-clock" style="color: var(--danger);"></i>
+                    <span class="metric-value">2-5 Years</span>
+                    <span class="metric-label">Average Wait Time</span>
+                </div>
+            </div>
         </header>
 
-        <section style="max-width: 900px;">
-            <div class="video-container animate-fade-in" style="margin-bottom: var(--spacing-lg);">
-                <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <!-- --- TYPES OF PROGRAMS --- -->
+        <section class="section-box">
+            <div class="section-header">
+                <i class="fas fa-list-ul" style="color: var(--secondary);"></i>
+                <h2 class="section-title">Types of Housing Assistance Programs</h2>
             </div>
-
-            <div class="glass-card animate-fade-in" style="animation-delay: 0.2s;">
-                <h2 style="margin-bottom: var(--spacing-md);">Operation Step-by-Step</h2>
-                
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Official Portal Access</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Access the official American refund system portal by clicking the link below the video.</p>
-                    </div>
+            
+            <div class="grid-2">
+                <div class="prog-card">
+                    <div class="prog-header" style="color: var(--success);"><i class="fas fa-key"></i> Section 8 Voucher</div>
+                    <ul class="prog-list">
+                        <li><i class="fas fa-check"></i> Most common assistance program</li>
+                        <li><i class="fas fa-check"></i> You find your own housing</li>
+                    </ul>
                 </div>
-
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Information Submittal</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Submit your basic information as guided in the video above to begin your eligibility verification.</p>
-                    </div>
+                <div class="prog-card">
+                    <div class="prog-header" style="color: var(--secondary);"><i class="fas fa-city"></i> Public Housing</div>
+                    <ul class="prog-list">
+                        <li><i class="fas fa-check"></i> Owned by the government</li>
+                        <li><i class="fas fa-check"></i> Rent based on income</li>
+                    </ul>
                 </div>
-
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Confirmation & Withdrawal</h4>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Following verification, the system will specify your available amount. Proceed to the bank transfer phase.</p>
-                    </div>
+                <div class="prog-card">
+                    <div class="prog-header" style="color: var(--warning);"><i class="fas fa-house-user"></i> Project-Based Vouchers</div>
+                    <ul class="prog-list">
+                        <li><i class="fas fa-check"></i> Linked to specific buildings</li>
+                        <li><i class="fas fa-check"></i> Transfers only after 1 year</li>
+                    </ul>
                 </div>
-
-                <div style="margin-top: var(--spacing-lg); text-align: center;">
-                    <button class="btn-cta" style="width: 100%;">Open Refund Portal <i class="fas fa-external-link-alt"></i></button>
-                    <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);"><i class="fas fa-info-circle"></i> The portal will open in a new tab.</p>
+                <div class="prog-card">
+                    <div class="prog-header" style="color: var(--danger);"><i class="fas fa-first-aid"></i> Emergency Housing</div>
+                    <ul class="prog-list">
+                        <li><i class="fas fa-check"></i> For homelessness crisis</li>
+                        <li><i class="fas fa-check"></i> Immediate short-term aid</li>
+                    </ul>
                 </div>
             </div>
         </section>
-    </main>
 
-    <script src="/src/components.js"></script>
+        <!-- --- SECTION 8 DETAIL --- -->
+        <section class="section-box">
+            <div class="section-header">
+                <i class="fas fa-id-card" style="color: var(--secondary);"></i>
+                <h2 class="section-title">Section 8 Housing Choice Voucher</h2>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px;">As the largest federal housing assistance program, it provides vouchers that allow you to choose your own housing in the private market. You pay 30% of your income toward rent, and the voucher covers the rest.</p>
+
+            <div class="eligibility-box">
+                <h4 style="margin-bottom: 20px; font-weight: 800;">Section 8 Eligibility Requirements</h4>
+                <div class="eligibility-grid">
+                    <div>
+                        <h5 style="font-size: 0.8rem; margin-bottom: 10px;">Income Limits (Examples)</h5>
+                        <table class="elig-table">
+                            <tr><td>1 Person</td><td>$25,000/Year</td></tr>
+                            <tr><td>2 Persons</td><td>$28,600/Year</td></tr>
+                            <tr><td>3 Persons</td><td>$32,150/Year</td></tr>
+                            <tr><td>4 Persons</td><td>$35,700/Year</td></tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h5 style="font-size: 0.8rem; margin-bottom: 10px;">Other Requirements</h5>
+                        <ul class="elig-checklist">
+                            <li><i class="fas fa-check-circle"></i> US Citizen or Eligible Immigrant</li>
+                            <li><i class="fas fa-check-circle"></i> Clean Criminal Background</li>
+                            <li><i class="fas fa-check-circle"></i> No Recent Evictions</li>
+                            <li><i class="fas fa-check-circle"></i> Meet Local Income Limits</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-row">
+                <div>
+                    <h4 style="font-size: 1rem; margin-bottom: 20px;">How Section 8 Works</h4>
+                    <div class="step-vertical">
+                        <div class="step-item">
+                            <div class="step-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="step-content"><h5>Apply for Voucher</h5><p>Wait times can be long, so apply early.</p></div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-icon"><i class="fas fa-user-check"></i></div>
+                            <div class="step-content"><h5>Voucher Approval</h5><p>Housing Authority verifies your income.</p></div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-icon"><i class="fas fa-search-home"></i></div>
+                            <div class="step-content"><h5>Find Housing</h5><p>Find a private rental that meets standards.</p></div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-icon"><i class="fas fa-key"></i></div>
+                            <div class="step-content"><h5>Move-In</h5><p>Lease is signed and you pay your 30%.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: #f8fafc; border-radius: 10px; padding: 25px; border: 1px solid var(--border);">
+                    <h4 style="font-size: 1rem; margin-bottom: 25px;">What You Pay</h4>
+                    <div style="margin-bottom: 20px; display: flex; justify-content: space-between; border-bottom: 1px dashed #cbd5e1; padding-bottom: 10px;">
+                        <div><strong style="display:block; font-size: 0.9rem;">Your Rent Payment</strong><span style="font-size: 0.75rem; color: var(--text-muted);">Minimum of 30% of Income</span></div>
+                        <div style="color: var(--success); font-weight: 800;">30% of Income</div>
+                    </div>
+                    <div style="margin-bottom: 20px; display: flex; justify-content: space-between; border-bottom: 1px dashed #cbd5e1; padding-bottom: 10px;">
+                        <div><strong style="display:block; font-size: 0.9rem;">Voucher Payment</strong><span style="font-size: 0.75rem; color: var(--text-muted);">Paid to Housing Owner</span></div>
+                        <div style="color: var(--secondary); font-weight: 800;">Remainder</div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <div><strong style="display:block; font-size: 0.9rem;">Utilities</strong><span style="font-size: 0.75rem; color: var(--text-muted);">Can be included or separate</span></div>
+                        <div style="color: var(--primary); font-weight: 800;">Varies</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- HOW TO APPLY --- -->
+        <section class="section-box" style="background: var(--info-light);">
+            <div class="section-header">
+                <i class="fas fa-clipboard-list" style="color: var(--secondary);"></i>
+                <h2 class="section-title">How to Apply for Housing Assistance</h2>
+            </div>
+            
+            <div class="apply-grid">
+                <div class="doc-box">
+                    <h4><i class="fas fa-folder-open" style="color: var(--warning);"></i> Required Documents</h4>
+                    <ul class="doc-list">
+                        <li>Social Security cards for all household members</li>
+                        <li>Birth Certificates</li>
+                        <li>Drivers license or photo ID</li>
+                        <li>Proof of all income (pay stubs)</li>
+                        <li>Bank Statements</li>
+                        <li>Utility bill verification</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="font-size: 0.95rem; margin-bottom: 15px;">Application Steps</h4>
+                    <div class="step-item">
+                        <div class="step-icon" style="background: #fff;"><i class="fas fa-check" style="color: var(--success);"></i></div>
+                        <div class="tip-info"><h5>Find Your Local Housing Authority</h5><p>Locate the office in the county you want to live in.</p></div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon" style="background: #fff;"><i class="fas fa-check" style="color: var(--success);"></i></div>
+                        <div class="tip-info"><h5>Submit Application</h5><p>Complete application forms by mail or in person.</p></div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon" style="background: #fff;"><i class="fas fa-check" style="color: var(--success);"></i></div>
+                        <div class="tip-info"><h5>Wait for Response</h5><p>Your application will be placed on the waitlist.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- TIPS --- -->
+        <section class="section-box" style="background: var(--success-light);">
+            <div class="section-header">
+                <i class="fas fa-lightbulb" style="color: var(--success);"></i>
+                <h2 class="section-title" style="color: var(--success);">Tips to Get Housing Assistance Faster</h2>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <i class="fas fa-map-marker-alt" style="color: var(--success);"></i>
+                    <div class="tip-info"><h5>Apply with Multiple Offices</h5><p>Apply to several housing authorities at the same time.</p></div>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-star" style="color: var(--success);"></i>
+                    <div class="tip-info"><h5>Special Preferences</h5><p>Ensure you identify if you are disabled, elderly, or homeless.</p></div>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-phone-alt" style="color: var(--success);"></i>
+                    <div class="tip-info"><h5>Stay in Contact</h5><p>Keep your address and phone number updated with the HA.</p></div>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-search" style="color: var(--success);"></i>
+                    <div class="tip-info"><h5>Look for Project-Based</h5><p>Specific buildings may have shorter wait times than vouchers.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- VIDEOS --- -->
+        <section class="section-box">
+            <div class="section-header">
+                <i class="fas fa-video" style="color: var(--danger);"></i>
+                <h2 class="section-title">Video Tutorials</h2>
+            </div>
+            <div class="video-guide-grid">
+                <div class="video-guide-card" style="background: var(--danger-light);">
+                    <h5>Section 8 Application Guide</h5>
+                    <p>Learn tips for filling out the forms correctly.</p>
+                    <a href="#" class="btn-video" style="background: var(--danger);"><i class="fas fa-play"></i> Watch Video</a>
+                </div>
+                <div class="video-guide-card" style="background: #eef2ff;">
+                    <h5>Affordable Housing Search</h5>
+                    <p>How to find rentals that accept your voucher.</p>
+                    <a href="#" class="btn-video" style="background: var(--secondary);"><i class="fas fa-play"></i> Watch Video</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- RESOURCES --- -->
+        <footer class="resource-section">
+            <div class="res-group">
+                <h4>National Resources</h4>
+                <a href="#" class="res-link">HUD Resource Locator<span>Find any housing office in the US.</span></a>
+                <a href="#" class="res-link">211 Information<span>Dial 211 for local community services.</span></a>
+                <a href="#" class="res-link">HUD Hotline<span>Available for housing help and complaints.</span></a>
+            </div>
+            <div class="res-group">
+                <h4>Local Help</h4>
+                <a href="#" class="res-link" style="color: var(--success);">Start At Local Housing Authority<span>Most important step is talking to your local office.</span></a>
+                <a href="#" class="res-link" style="color: var(--success);">Legal Aid<span>Free legal help for housing issues.</span></a>
+            </div>
+        </footer>
+
+    </div>
+
 </body>
 </html>
