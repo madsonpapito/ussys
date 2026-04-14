@@ -3,44 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training Passo a Passo - USA System</title>
-    <link rel="stylesheet" href="/src/styles/main.css">
-    <link rel="stylesheet" href="/src/styles/components.css">
+    <title>USA System - Step-by-Step Training</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --primary-red: #ef4444;
+            --accent-gold: #fbbf24;
+            --success-green: #22c55e;
+            --text-light: #f8fafc;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header-welcome {
+            color: var(--primary-red);
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .withdrawal-box {
+            margin-bottom: 40px;
+        }
+
+        .withdrawal-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .btn-access {
+            display: inline-block;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white;
+            padding: 1.25rem 3rem;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-access:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
+        }
+
+        .step-section {
+            margin-top: 60px;
+            padding: 30px 0;
+        }
+
+        .step-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .gold { color: var(--accent-gold); }
+        .white { color: #fff; }
+
+        .watch-text {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .arrow-down {
+            color: var(--primary-red);
+            font-size: 2.5rem;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 25px;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-site {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #22c55e;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .btn-site:hover {
+            background: #16a34a;
+        }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 15px;
+        }
+
+        .step-2-title {
+            color: #60a5fa;
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        @media (max-width: 600px) {
+            .header-welcome { font-size: 2.5rem; }
+            .withdrawal-text { font-size: 1.2rem; }
+            .step-title { font-size: 1.4rem; }
+        }
+    </style>
 </head>
-<body style="display: flex; background: #f1f5f9;">
-    
-    <div id="sidebar-container"></div>
+<body>
 
-    <main style="flex: 1; padding: var(--spacing-lg); overflow-y: auto;">
-        <header style="margin-bottom: var(--spacing-lg);">
-            <h1 >Initial Training</h1>
-            <p style="color: var(--text-muted);">Learn the fundamentals to master the USA System.</p>
-        </header>
+    <div class="container">
+        <h1 class="header-welcome">Welcome</h1>
 
-        <section style="display: grid; gap: var(--spacing-md);">
-            <div class="glass-card animate-fade-in">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <h3>Lesson 01: System Introduction</h3>
-                    <span style="font-size: 0.8rem; background: var(--primary-glow); padding: 4px 12px; border-radius: 20px; color: var(--primary);">Completed</span>
-                </div>
-                <div class="video-container" style="margin-bottom: 1rem;">
-                    <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                </div>
+        <div class="withdrawal-box">
+            <h2 class="withdrawal-text">CLICK BELOW TO START YOUR <span style="color: var(--primary-red);">WITHDRAWAL</span></h2>
+            <a href="#" class="btn-access">GET ACCESS</a>
+            <p class="footer-note">In addition, our Team finds the presence on official site to be of high importance.</p>
+            <p class="footer-note" style="color: var(--primary-red); text-transform: uppercase; font-weight: 800; margin-top: 5px;">The access file has been sent to your email. If you can't find it there, please check the 'spam' folder. If you have any questions, contact us at: usa-system@gmail.com</p>
+        </div>
+
+        <!-- WELCOME SECTION -->
+        <section class="step-section">
+            <h3 class="step-title">
+                <span class="gold">A SIMPLE, QUICK, AND</span><br>
+                <span class="white">STRAIGHT-TO-THE-POINT STEP-BY-STEP</span> <span class="gold">GUIDE.</span>
+            </h3>
+            <p class="watch-text">Watch now and check if you have any unclaimed funds waiting for you.</p>
+            <div class="arrow-down"><i class="fas fa-chevron-down"></i></div>
+            
+            <div class="video-wrapper">
+                <iframe src="https://play.tynk.ai/p/d849ca26-b8a0-4733-ac85-1d67aed38187" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
-
-            <div class="glass-card animate-fade-in" style="animation-delay: 0.2s;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <h3>Lesson 02: First Refunds</h3>
-                    <span style="font-size: 0.8rem; background: var(--surface-light); padding: 4px 12px; border-radius: 20px; color: var(--text-muted);">Next Lesson</span>
-                </div>
-                <!-- Placeholder para nova aula -->
-                <div style="height: 100px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-style: italic;">
-                    Watch the previous lesson to unlock...
-                </div>
-            </div>
+            
+            <a href="#" class="btn-site"><i class="fas fa-external-link-alt"></i> CLICK HERE TO SITE</a>
         </section>
-    </main>
+
+        <!-- STEP 2 SECTION -->
+        <section class="step-section">
+            <h3 class="step-2-title">Step 2 - <span class="white">Watch this class if you didn't get it in the first class</span></h3>
+            <div class="arrow-down"><i class="fas fa-chevron-down"></i></div>
+            
+            <div class="video-wrapper">
+                <iframe src="https://play.tynk.ai/p/85b0cb0c-2ea8-4a5f-b777-90d658c2ae31" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <a href="#" class="btn-site"><i class="fas fa-external-link-alt"></i> CLICK HERE TO SITE</a>
+        </section>
+
+        <!-- STEP 3 SECTION (IRS) -->
+        <section class="step-section">
+            <h3 class="step-title" style="color: #fff;">
+                You may have something stuck in the IRS,<br>
+                <span class="gold">take a look and make sure you</span> get what is rightfully yours.
+            </h3>
+            <p class="watch-text">Watch now and check if you have any unclaimed funds waiting for you.</p>
+            <div class="arrow-down"><i class="fas fa-chevron-down"></i></div>
+            
+            <div class="video-wrapper">
+                <iframe src="https://play.tynk.ai/p/28f8d1c7-aab0-4a6d-8656-ed7e5c6e6e81" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <a href="https://www.irs.gov/refunds" target="_blank" class="btn-site"><i class="fas fa-external-link-alt"></i> CLICK HERE TO SITE</a>
+        </section>
+
+        <!-- STEP 4 SECTION (FDIC) -->
+        <section class="step-section">
+            <h3 class="step-title" style="color: #fff;">
+                You might have money waiting at the FDIC,<br>
+                <span class="gold">take a moment to verify</span> and claim what belongs to you.
+            </h3>
+            <p class="watch-text">Press play now to see if any unclaimed dollars are sitting in your name.</p>
+            <div class="arrow-down"><i class="fas fa-chevron-down"></i></div>
+            
+            <div class="video-wrapper">
+                <iframe src="https://play.tynk.ai/p/4383a9fd-c64a-4220-9758-0e6d7c258b05" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <a href="https://closedbanks.fdic.gov/ubp/" target="_blank" class="btn-site"><i class="fas fa-external-link-alt"></i> CLICK HERE TO SITE</a>
+        </section>
+
+        <!-- BONUS 1 SECTION -->
+        <section class="step-section">
+            <h3 class="step-title" style="color: #fff;">
+                Don't leave your cash behind with the PROPERTY TEXAS,<br>
+                <span class="gold">discover it</span> now and secure what's rightfully yours.
+            </h3>
+            <p class="watch-text">Click play to uncover any unclaimed funds registered under your name.</p>
+            <div class="arrow-down"><i class="fas fa-chevron-down"></i></div>
+            
+            <div class="video-wrapper">
+                <iframe src="https://play.tynk.ai/p/febb703a-3874-460a-a061-3c2d1619c4f0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <a href="https://www.claimittexas.org/" target="_blank" class="btn-site"><i class="fas fa-external-link-alt"></i> CLICK HERE TO SITE</a>
+        </section>
+
+        <!-- BONUS 2 SECTION -->
+        <section class="step-section">
+            <h3 class="step-title" style="color: #fff;">
+                Bonus <span class="gold">Strategy</span>
+            </h3>
+            <div class="arrow-down"><i class="fas fa-chevron-down"></i></div>
+            
+            <div class="video-wrapper">
+                <iframe src="https://play.tynk.ai/p/747d4252-f4e2-4462-8d53-74d3d4ea41c9" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <a href="#" class="btn-site"><i class="fas fa-external-link-alt"></i> CLICK HERE TO SITE</a>
+        </section>
+
+    </div>
 
 </body>
 </html>

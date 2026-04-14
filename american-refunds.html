@@ -3,60 +3,286 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>American Refunds Guide - USA System</title>
-    <link rel="stylesheet" href="/src/styles/main.css">
-    <link rel="stylesheet" href="/src/styles/components.css">
+    <title>American Refunds - Recovery Money</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --government-blue: #3b82f6;
+            --government-dark: #1e3a8a;
+            --bg-light: #f1f5f9;
+            --text-dark: #0f172a;
+            --success-green: #22c55e;
+            --warning-red: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #fff;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--government-blue);
+        }
+
+        .logo-img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .official-notice {
+            background: #fff;
+            padding: 10px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .top-banner {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .banner-text {
+            color: var(--warning-red);
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .module-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .module-header {
+            background: var(--government-blue);
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .cta-btn {
+            display: block;
+            width: 100%;
+            background: #fbbf24;
+            color: #000;
+            text-align: center;
+            padding: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            box-shadow: 0 4px 0 #d97706;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #d97706;
+        }
+
+        .ebook-section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .ebook-img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .slots-indicator {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid var(--government-blue);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .slots-count {
+            color: var(--warning-red);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        .bonus-badge {
+            background: #fff;
+            padding: 2px 10px;
+            border-radius: 40px;
+            color: var(--government-blue);
+            font-size: 0.7rem;
+            font-weight: 900;
+        }
+    </style>
 </head>
-<body style="display: flex; background: #f1f5f9;">
+<body>
 
-    <!-- Sidebar será injetada aqui -->
-    <div id="sidebar-container"></div>
+    <header class="header">
+        <img src="logo-recovery.webp" alt="Recovery Money Logo" class="logo-img">
+    </header>
 
-    <main style="flex: 1; padding: var(--spacing-md); height: 100vh; overflow-y: auto;">
-        <div class="container" style="max-width: 900px; margin: 0 auto;">
-            <div class="glass-card">
-                <nav style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-muted);">
-                    <a href="/hub.html" style="color: inherit; text-decoration: none;">Dashboard</a> / 
-                    <span style="color: var(--primary);">American Refunds</span>
-                </nav>
+    <div class="official-notice">
+        Conexão oficial com o Tesouro Nacional estabelecida — Canal de Restituição Aberto
+    </div>
 
-                <h1 style="color: var(--primary); margin-bottom: 1.5rem;">Official American Refunds Guide</h1>
-                <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2rem;">Follow this comprehensive roadmap to identify and claim federal tax and administrative refunds entitled to residents.</p>
+    <div class="container">
+        
+        <div class="top-banner">
+            <p class="banner-text">CONEXÃO COM O GOVERNO PARA A COLETA</p>
+            <p style="font-size: 0.9rem; font-weight: 600;">DO REEMBOLSO AMERICANO ESTABELECIDA!</p>
+        </div>
 
-                <div class="video-container" style="margin-bottom: 3rem;">
-                    <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                </div>
-
-                <div class="section">
-                    <h2 style="color: var(--primary); margin-bottom: 1rem;">1. Eligibility Check</h2>
-                    <p style="margin-bottom: 1.5rem;">The first step in claiming your restitution is verifying your status against the current federal fiscal year's available funds. Our system has already pre-verified your initial eligibility.</p>
-                    
-                    <div style="background: #e6f0ff; border-left: 4px solid var(--secondary); padding: 1.5rem; border-radius: 4px; margin-bottom: 2rem;">
-                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-info-circle"></i> Important Notice</h4>
-                        <p style="font-size: 0.9rem; color: var(--primary);">Refunds are processed sequentially. Ensure all your documentation is ready before proceeding to the payout setup.</p>
-                    </div>
-
-                    <h2 style="color: var(--primary); margin-bottom: 1rem;">2. Required Documentation</h2>
-                    <ul style="padding-left: 20px; line-height: 2;">
-                        <li>Valid government-issued ID (Driver's License or ID Card)</li>
-                        <li>Social Security Number (SSN) for tax reconciliation</li>
-                        <li>Proof of residency for the applicable refund period</li>
-                    </ul>
-                </div>
-
-                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-                    <a href="/hub.html" style="color: var(--text-muted); text-decoration: none; font-weight: 700;">
-                        <i class="fas fa-arrow-left"></i> Back to Dashboard
-                    </a>
-                    <a href="/paypal-now.html" class="btn-cta">
-                        Setup Payout Now <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
+        <!-- MODULE 1 -->
+        <div class="module-card">
+            <div class="module-header">
+                <i class="fas fa-play-circle"></i> AULA 01: BEM-VINDO AO RECOVERY MONEY
+            </div>
+            <div class="video-container">
+                <iframe src="https://play.tynk.ai/p/68dbc6d0-df99-44a9-b70f-852b7e27899c" allowfullscreen></iframe>
             </div>
         </div>
-    </main>
 
-    <script src="/src/components.js"></script>
+        <!-- MODULE 2 -->
+        <div class="module-card">
+            <div class="module-header">
+                <i class="fas fa-play-circle"></i> AULA 02: INTRODUÇÃO
+            </div>
+            <div class="video-container">
+                <iframe src="https://play.tynk.ai/p/48900e4c-7d38-4547-b3a8-ee838bddc0a5" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- MODULE 3 -->
+        <div class="module-card">
+            <div class="module-header">
+                <i class="fas fa-play-circle"></i> AULA 03: EXPLICAÇÃO
+            </div>
+            <div class="video-container">
+                <iframe src="https://play.tynk.ai/p/c0fbddcb-094d-404b-8bd8-09d769fc9672" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- MODULE 4 -->
+        <div class="module-card">
+            <div class="module-header">
+                <i class="fas fa-play-circle"></i> AULA 04: TUTORIAL PRÁTICO
+            </div>
+            <div class="video-container">
+                <iframe src="https://play.tynk.ai/p/317745da-4ee1-413e-9208-2bd595f07b3e" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- EBOOK SECTION -->
+        <div class="ebook-section">
+            <div class="module-header" style="border-radius: 8px 8px 0 0; margin: -30px -30px 20px -30px;">
+                <i class="fas fa-book"></i> E-BOOK RECOVERY MONEY
+            </div>
+            <img src="recovery.webp" alt="Recovery Money Ebook" class="ebook-img">
+            <p style="font-weight: 700; font-size: 0.9rem; margin-bottom: 15px;">Acesso ao Guia Prático em PDF</p>
+            <a href="#" class="cta-btn">BAIXAR PDF AGORA</a>
+        </div>
+
+        <!-- BONUS SECTION -->
+        <div class="module-card" style="padding: 20px; text-align: center;">
+            <div class="module-header" style="margin: -20px -20px 20px -20px;">
+                <i class="fas fa-gift"></i> BÔNUS 1 <span class="bonus-badge">LIBERADO</span>
+            </div>
+            <img src="bonus1-474x1024.webp" alt="Bonus Package" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+            <p style="font-size: 0.8rem; font-weight: 600; color: #64748b;">Pacote exclusivo de ferramentas para acelerar sua restituição.</p>
+            <a href="#" class="cta-btn">LIBERAR BÔNUS EXCLUSIVO</a>
+        </div>
+
+        <!-- SLOTS SECTION -->
+        <div class="slots-indicator">
+            <p style="font-weight: 800; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 10px;">Vagas para o próximo suporte ao vivo:</p>
+            <p class="slots-count">RESTAM APENAS 12 VAGAS</p>
+            <div style="height: 10px; background: #e2e8f0; border-radius: 10px; margin-top: 15px;">
+                <div style="width: 85%; height: 100%; background: var(--warning-red); border-radius: 10px;"></div>
+            </div>
+            <a href="/paypal-now.html" class="cta-btn" style="background: #22c55e; color: #fff; box-shadow: 0 4px 0 #16a34a;">VERIFICAR AGORA</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <img src="logo-recovery.webp" alt="Footer Logo" style="max-width: 80px; opacity: 0.5; margin-bottom: 20px;">
+        <p>&copy; 2024 Recovery Money. Todos os direitos reservados.</p>
+        <p style="margin-top: 10px; font-size: 0.7rem;">Suporte prioritário via WhatsApp para membros verificados.</p>
+    </footer>
+
 </body>
 </html>
