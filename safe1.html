@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Tax Recovery Mastery | Official Educational Resource</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #001529;
+            --accent-gold: #c5a059;
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 33, 71, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #003366, var(--primary));
+            color: #fff;
+            padding: 8rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--background), transparent);
+        }
+
+        .feature-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--secondary);
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary);
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--surface-light);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-item.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: var(--surface-light);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .stat-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header sticky-header">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon" style="background: #fff; color: var(--primary);">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                USA <span>Recovery</span>
+            </div>
+            <nav style="display: flex; gap: 30px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
+                <a href="#curriculum" style="color: #fff; text-decoration: none; opacity: 0.8; transition: 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">Recovery Steps</a>
+                <a href="#faq" style="color: #fff; text-decoration: none; opacity: 0.8; transition: 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">FAQ</a>
+                <a href="https://pay.mycheckoutt.com/019d7ba5-7613-7378-a740-015ebfc3a566?ref=" style="color: var(--secondary); background: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none;">Enroll Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ATTENTION (Hero) -->
+    <section class="hero-gradient text-center">
+        <div class="container">
+            <div class="stat-badge animate-fade-in">
+                <i class="fas fa-certificate" style="color: #ffd700;"></i> E-COMMERCE TAX MASTERY
+            </div>
+            <h1 style="font-size: 3.5rem; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;" class="animate-fade-in">
+                Mastering the Art of <span style="text-decoration: underline; text-underline-offset: 8px;">Amazon Tax Recovery</span> & Rebates
+            </h1>
+            <p style="font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto 3rem; line-height: 1.8;" class="animate-fade-in">
+                A structured educational roadmap designed specifically for US residents and businesses to identify overpaid sales taxes on past Amazon purchases.
+            </p>
+            <div class="animate-fade-in">
+                <a href="https://pay.mycheckoutt.com/019d7ba5-7613-7378-a740-015ebfc3a566?ref=" class="btn-cta" style="padding: 1.5rem 3.5rem; font-size: 1.2rem; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    Start Your Recovery Pathway <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTEREST (Problem/Solution) -->
+    <section id="interest" class="section" style="background: #fff;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div>
+                    <h2 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 2rem;">Unclaimed E-Commerce Credits</h2>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-muted);">
+                        Thousands of US residentes unknowingly overpay sales taxes or miss out on specific e-commerce rebates because they don't know the proper verification framework.
+                    </p>
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-muted);">
+                        Our learning program focuses on the technical side of order audits. We teach you how to analyze your history and reclaim what is yours by law.
+                    </p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem; font-weight: 600; color: var(--primary);">
+                            <i class="fas fa-check-circle" style="color: #059669;"></i> Identifying Tax-Exempt Overpayments
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem; font-weight: 600; color: var(--primary);">
+                            <i class="fas fa-check-circle" style="color: #059669;"></i> Auditing Digital Invoice History
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem; font-weight: 600; color: var(--primary);">
+                            <i class="fas fa-check-circle" style="color: #059669;"></i> Automating Refund Submissions
+                        </li>
+                    </ul>
+                </div>
+                <div style="position: relative;">
+                    <div style="background: var(--surface-light); border-radius: var(--radius-lg); padding: 3rem; position: relative; z-index: 2;">
+                        <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Recovery Module Highlights:</h3>
+                        <div style="background: #fff; padding: 1rem; border-radius: 10px; border-left: 4px solid var(--secondary); margin-bottom: 1rem;">
+                            <strong style="display: block;">The Order Audit Blueprint</strong>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">Learn to filter your entire history for eligibility markers.</span>
+                        </div>
+                        <div style="background: #fff; padding: 1rem; border-radius: 10px; border-left: 4px solid var(--secondary); margin-bottom: 1rem;">
+                            <strong style="display: block;">Tax-Exemption Logic</strong>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">Why you might have paid taxes when you shouldn't have.</span>
+                        </div>
+                        <div style="background: #fff; padding: 1rem; border-radius: 10px; border-left: 4px solid var(--secondary);">
+                            <strong style="display: block;">Portal Navigation</strong>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">The exact internal links to initiate recovery requests.</span>
+                        </div>
+                    </div>
+                    <div style="position: absolute; top: -20px; right: -20px; width: 100%; height: 100%; border: 2px dashed var(--border); border-radius: var(--radius-lg); z-index: 1;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DESIRE (Benefits) -->
+    <section id="curriculum" class="section" style="background: var(--surface-light);">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;">Inside the Amazon Training</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Our curriculum is specialized for identifying and reclaiming e-commerce related financial surpluses.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+                <div class="feature-card">
+                    <div class="icon-box"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h4>Phase 1: History Audit</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">We teach you how to pull and analyze up to 7 years of order data to find specific line items eligible for tax refunds.</p>
+                    <ul style="font-size: 0.85rem; line-height: 2; color: var(--primary); padding-left: 20px;">
+                        <li>Digital Receipt Exporting</li>
+                        <li>Tax Code Identification</li>
+                        <li>Geography Overpayment Flags</li>
+                        <li>Membership Fee Recoupment</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box" style="color: #059669; background: #ecfdf5;"><i class="fas fa-certificate"></i></div>
+                    <h4>Phase 2: Claims Setup</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Learn to use official support channels to file "Account Discrepancy" claims that bypass standard customer service bots.</p>
+                    <ul style="font-size: 0.85rem; line-height: 2; color: var(--primary); padding-left: 20px;">
+                        <li>Internal Link Discovery</li>
+                        <li>Proof of Purchase Templates</li>
+                        <li>Escalation Subject Lines</li>
+                        <li>Case Management Skills</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box" style="color: #7c3aed; background: #f5f3ff;"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h4>Phase 3: Fund Payout</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Ensuring your refund hit your balance or bank account correctly. We cover payout verification and internal credit tracking.</p>
+                    <ul style="font-size: 0.85rem; line-height: 2; color: var(--primary); padding-left: 20px;">
+                        <li>Account Balance Monitoring</li>
+                        <li>Bank Transfer Verification</li>
+                        <li>Credit Card Adjustment Tracking</li>
+                        <li>Receipting Your Recovery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (Trust/Objection Handling) -->
+    <section id="faq" class="section" style="background: #fff;">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; color: var(--primary);">Frequently Asked Questions</h2>
+                <p style="color: var(--text-muted);">Specific answers about the Amazon Tax Recovery Pathway.</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is this affiliated with Amazon.com?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No. USA Recovery is an independent educational program. We provide the technical knowledge for you to use existing Amazon internal tools and tax laws to your advantage.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How many years back can I go?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Most recovery protocols we teach cover up to 3-5 years of order history, though some specific state-level tax laws allow for longer lookback periods.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need a Business account?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No. These frameworks work for both Personal and Business accounts, though the specific forms and portal links may vary slightly, which we cover in detail.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there a guarantee?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. We offer a 60-day satisfaction period. If you feel the training doesn't help you identify potential surpluses in your account, you can request a refund via Digistore24.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACTION (Final CTA) -->
+    <section class="section text-center" style="background: var(--surface-light);">
+        <div class="container">
+            <div class="glass-card animate-fade-in" style="max-width: 800px; margin: 0 auto; padding: 4rem;">
+                <h2 style="margin-bottom: 1.5rem; color: var(--primary); font-size: 2.5rem;">Start Your Amazon Recovery</h2>
+                <p style="margin-bottom: 3rem; color: var(--text-muted); font-size: 1.1rem;">
+                    Don't let your overpaid taxes sit in their balance. Learn to claim what's rightfully yours today.
+                </p>
+                <a href="https://pay.mycheckoutt.com/019d7ba5-7613-7378-a740-015ebfc3a566?ref=" class="btn-cta" style="width: 100%; max-width: 500px; font-size: 1.3rem;">
+                    Access Amazon Recovery Academy
+                </a>
+                <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 40px; align-items: center;">
+                    <img src="https://www.digistore24.com/static/img/badges/digistore24-seal-en.png" alt="Digistore24" style="height: 60px;">
+                    <div style="text-align: left; font-size: 0.8rem; color: var(--text-muted);">
+                        <p><strong>Trusted Payment Provider</strong></p>
+                        <p>Secure SSL encrypted checkout.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--primary); color: #fff; padding: 5rem 0 3rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 4rem;">
+                <div>
+                    <h4 style="margin-bottom: 1.5rem; letter-spacing: 1px;">USA RECOVERY</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.7; max-width: 400px; line-height: 1.8;">
+                        Empowering shoppers with the frameworks to audit their history and reclaim overpaid balances through official channels.
+                    </p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Support</h4>
+                    <nav style="display: flex; flex-direction: column; gap: 15px; font-size: 0.9rem;">
+                        <span style="opacity: 0.7;"><i class="fas fa-envelope" style="margin-right: 10px;"></i> support@usa-system.com</span>
+                    </nav>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Transparency</h4>
+                    <nav style="display: flex; flex-direction: column; gap: 15px; font-size: 0.9rem;">
+                        <a href="/imprint.html" style="color: #fff; text-decoration: none; opacity: 0.7;">Imprint</a>
+                        <a href="/privacy.html" style="color: #fff; text-decoration: none; opacity: 0.7;">Privacy Policy</a>
+                    </nav>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+                <div style="text-align: center; font-size: 0.75rem; opacity: 0.5; max-width: 900px; margin: 0 auto; line-height: 1.6;">
+                    <p>&copy; 2024 USA Recovery Academy. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) item.classList.remove('active');
+                });
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
