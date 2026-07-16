@@ -1,0 +1,351 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Cards For Feedback</title>
+
+<!-- Player optimization -->
+<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+<link rel="preload" href="https://scripts.converteai.net/8671d2f6-c45f-4b55-9776-68f6c495a79a/players/6a58bde234189080e2cfa425/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="preload" href="https://cdn.converteai.net/8671d2f6-c45f-4b55-9776-68f6c495a79a/6a58bdd9120d97ef08f7dbcc/main.m3u8" as="fetch">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://license.vturb.com">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f0f2f5;min-height:100vh;color:#050505}
+
+.post-card{max-width:500px;margin:12px auto;background:#fff;border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,.1)}
+
+.post-header{display:flex;align-items:center;gap:10px;padding:12px 16px 8px}
+.post-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#0a7c42,#0d9e54);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px}
+.post-info{flex:1}
+.post-name{font-size:15px;font-weight:600;color:#050505}
+.post-meta{font-size:13px;color:#65676b;display:flex;align-items:center;gap:4px}
+.post-meta svg{width:12px;height:12px}
+
+.post-body{padding:4px 16px 12px}
+.post-text{font-size:15px;color:#050505;line-height:1.4}
+.post-text strong{font-weight:700}
+
+.vsl-container{padding:0 16px 12px}
+
+.live-bar{background:#e7f3ff;border-radius:8px;margin:0 16px 8px;padding:8px 12px;display:flex;align-items:center;gap:8px;font-size:13px;color:#1877f2;font-weight:600}
+.live-dot{width:8px;height:8px;background:#e41e3f;border-radius:50%;animation:livePulse 1.5s infinite}
+@keyframes livePulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.engagement-bar{padding:8px 16px;display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#65676b}
+.engagement-left{display:flex;align-items:center;gap:4px}
+.engagement-emojis{display:flex}
+.engagement-emojis span{width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:14px;margin-right:-4px}
+.engagement-right{display:flex;gap:8px}
+
+.action-bar{display:flex;border-top:1px solid #e4e6eb;border-bottom:1px solid #e4e6eb;margin:0 16px;padding:4px 0}
+.action-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:7px;border:none;background:none;color:#65676b;font-size:14px;font-weight:600;cursor:pointer;border-radius:4px;font-family:inherit}
+.action-btn:hover{background:#f0f2f5}
+.action-btn svg{width:20px;height:20px}
+
+.comments-section{padding:8px 16px 12px}
+.comments-sort{font-size:14px;font-weight:600;color:#050505;padding:4px 0 10px}
+
+.comment{display:flex;gap:8px;margin-bottom:12px;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.comment-avatar{width:32px;height:32px;min-width:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700}
+.comment-bubble{background:#f0f2f5;border-radius:18px;padding:8px 12px;display:inline-block;max-width:100%}
+.comment-name{font-size:13px;font-weight:600;color:#050505}
+.comment-text{font-size:14px;color:#050505;line-height:1.35;margin-top:2px}
+.comment-meta{font-size:12px;color:#65676b;padding:2px 0 0 12px;display:flex;gap:12px}
+
+.typing-dots{display:flex;gap:3px;background:#f0f2f5;border-radius:18px;padding:12px 16px}
+.typing-dot{width:6px;height:6px;border-radius:50%;background:#65676b;animation:bounce .6s infinite}
+.typing-dot:nth-child(2){animation-delay:.15s}
+.typing-dot:nth-child(3){animation-delay:.3s}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+.comment-input{display:flex;align-items:center;gap:8px;padding:8px 16px 14px;border-top:1px solid #e4e6eb;background:#fff;border-radius:0 0 8px 8px}
+.ci-avatar{width:32px;height:32px;min-width:32px;border-radius:50%;background:#e4e6eb;display:flex;align-items:center;justify-content:center;color:#65676b;font-size:13px}
+.ci-field{flex:1;height:36px;border:1px solid #e4e6eb;border-radius:20px;padding:0 12px;font-size:14px;color:#65676b;background:#f0f2f5;outline:none;font-family:inherit}
+
+.float-container{position:fixed;bottom:60px;left:16px;width:40px;height:200px;pointer-events:none;z-index:50}
+.float-emoji{position:absolute;bottom:0;animation:floatUp 3s ease-out forwards;font-size:20px}
+@keyframes floatUp{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-180px) scale(.6)}}
+
+.page-footer{max-width:500px;margin:200px auto 0;padding:20px 16px 40px;text-align:center}
+.page-footer p{font-size:11px;color:rgba(0,0,0,.3);line-height:1.7;margin-bottom:8px}
+.page-footer a{color:rgba(0,0,0,.3)}
+
+@media(max-width:500px){
+  .post-card{margin:0;border-radius:0;box-shadow:none}
+  body{background:#fff}
+}
+</style>
+<!-- player.js local removido - usando script inline --></head>
+<body>
+<div class="float-container" id="floatReactions"></div>
+
+<div class="post-card">
+    <div class="post-header">
+        <div class="post-avatar">CF</div>
+        <div class="post-info">
+            <div class="post-name">Cards For Feedback</div>
+            <div class="post-meta">
+                <span id="timeAgo">25m</span> · <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.7 6.7l-4 4a1 1 0 01-1.4 0l-2-2a1 1 0 111.4-1.4L7 8.6l3.3-3.3a1 1 0 111.4 1.4z"></path></svg>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-body">
+        <div class="post-text"><strong>Major retailers are compensating people with $500 prepaid Mastercards for sharing their honest shopping feedback.</strong> Watch the video below to see if you qualify. 👇</div>
+    </div>
+
+    <div class="vsl-container">
+        <vturb-smartplayer id="vid-6a58bde234189080e2cfa425" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 178.21782178217822% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
+    </div>
+
+    <div class="live-bar">
+        <span class="live-dot"></span>
+        <span id="viewerCount">4,099</span> people watching right now
+    </div>
+
+    <div class="engagement-bar">
+        <div class="engagement-left">
+            <div class="engagement-emojis"><span>👍</span><span>❤️</span><span>😮</span></div>
+            <span id="likeCount">4.2K</span>
+        </div>
+        <div class="engagement-right">
+            <span id="commentCountDisplay">890 Comments</span>
+            <span id="shareCount">1.3K Shares</span>
+        </div>
+    </div>
+
+    <div class="action-bar">
+        <button class="action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"></path></svg> Like</button>
+        <button class="action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path></svg> Comment</button>
+        <button class="action-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg> Share</button>
+    </div>
+
+    <div class="comments-section">
+        <div class="comments-sort">Most Relevant</div>
+        <div id="commentsFeed"><div class="comment"><div class="comment-avatar" style="background:#4267B2">LW</div><div><div class="comment-bubble"><div class="comment-name">Linda Whitmore</div><div class="comment-text">Y'ALL ARE NOT READY for what he says around the 8 minute mark. Keep watching 😱</div></div><div class="comment-meta"><span>47m</span><span>Like</span><span>Reply</span></div></div></div><div class="comment"><div class="comment-avatar" style="background:#45bd62">HH</div><div><div class="comment-bubble"><div class="comment-name">Howard Hawkins</div><div class="comment-text">I almost clicked away but WAIT until he shows the actual card. My jaw dropped</div></div><div class="comment-meta"><span>38m</span><span>Like</span><span>Reply</span></div></div></div><div class="comment"><div class="comment-avatar" style="background:#e41e3f">KS</div><div><div class="comment-bubble"><div class="comment-name">Karen Sullivan</div><div class="comment-text">DON'T close this video. What he reveals next changed everything for me</div></div><div class="comment-meta"><span>41m</span><span>Like</span><span>Reply</span></div></div></div></div>
+        <div id="typingIndicator" style="display:flex;gap:8px;margin-bottom:8px">
+            <div style="width:32px;height:32px;min-width:32px;border-radius:50%;background:#e4e6eb"></div>
+            <div class="typing-dots"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>
+        </div>
+    </div>
+
+    <div class="comment-input">
+        <div class="ci-avatar">👤</div>
+        <input type="text" class="ci-field" placeholder="Write a comment..." readonly="">
+    </div>
+</div>
+
+<div class="page-footer">
+    <p>Disclaimer: This product does not guarantee income or success. Results vary by individual. This website is not affiliated with Facebook or any of its associated entities.</p>
+    <p>All payments are processed securely through our authorized payment processor. Cards For Feedback LLC is the sole provider of the products and services offered on this site.</p>
+    <p><strong>Mastercard Disclaimer:</strong> The Mastercard name and logo are trademarks of Mastercard International Incorporated. Cards For Feedback is not affiliated with, endorsed by, or sponsored by Mastercard International Incorporated.</p>
+    <p><a href="/disclaimers/privacy.html">Privacy</a> · <a href="/disclaimers/terms.html">Terms</a> · <a href="/disclaimers/earnings-disclaimer.html">Earnings</a> · <a href="/cdn-cgi/l/email-protection#b6d5d7c4d2c5f6c6c4dfd9c4dfc2cfc5c3c6c6d9c4c2c098ccd3d8d2d3c5dd98d5d9db">Support</a></p>
+</div>
+
+<!-- vturb player -->
+<script data-cfasync="false" src="js/email-decode.min.js"></script><script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/8671d2f6-c45f-4b55-9776-68f6c495a79a/players/6a58bde234189080e2cfa425/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+
+<script>
+// ===== COMMENTS ENGINE =====
+const commentPool = [
+    // === RETENTION / OPEN LOOPS (keep them watching) ===
+    "Y'ALL ARE NOT READY for what he says around the 8 minute mark. Keep watching 😱",
+    "I almost clicked away but WAIT until he shows the actual card. My jaw dropped",
+    "DON'T close this video. What he reveals next changed everything for me",
+    "If you haven't gotten to the part about the checks yet KEEP GOING. Trust me",
+    "I paused this 3 times because I thought it couldn't get better. IT DOES",
+    "Ok I was about to scroll past but something told me to stop. 10 minutes in and I can't look away",
+    "The first 5 minutes are good but what comes after... I'm still processing it",
+    "DO NOT skip ahead. Every single minute matters. Just trust me on this",
+
+    // === FAITH / PRAYER ===
+    "God told me to stop scrolling. Now I know why. Keep watching y'all 🙏",
+    "I was on my knees last night praying for help. The Lord put this in my feed this morning",
+    "If you prayed for a breakthrough and you're seeing this right now... that's not an accident",
+    "Something in my spirit told me this was different. I listened. Best decision I ever made 🙏",
+    "Proverbs 10:22. The blessing of the Lord makes one rich. This is it right here",
+    "My pastor always says God provides in ways we don't expect. He was NOT kidding",
+    "I prayed about money 3 days ago and this showed up. God's timing is unreal",
+    "Thank you Lord for this blessing. He didn't forget about me ❤️🙏",
+
+    // === SKEPTICISM TO BELIEF ===
+    "I thought this was a scam. I really did. My husband made me try it. $500 card showed up 4 days later. I owe him an apology 😂",
+    "My daughter had to convince me for a WEEK before I signed up. Now I'm the one telling everybody",
+    "I've been burned by every work from home thing online. This is NOT that. This is real. I'm holding the card right now",
+    "I told my wife it was a scam. She signed up anyway. When the card came I had to eat my words. Twice.",
+    "Skeptical people scroll past. Smart people watch the whole thing. I almost was the first one. Glad I became the second",
+
+    // === REAL RESULTS / SPENDING ===
+    "Got my $500 card and went straight to Family Dollar. Filled up the WHOLE cart. No embarrassment. Card went through clean 💯",
+    "Used mine at the gas pump yesterday. Filled up my truck. Haven't been able to do that in months",
+    "I paid my electric bill AND my phone bill with one card. Still had money left over",
+    "My grandbaby needed shoes. His toes were poking through. First thing I bought with the card 😭",
+    "Second card showed up this month. PLUS a check for $275. They keep coming y'all",
+    "I got a $500 Mastercard AND a $200 Visa in the same month. Different companies, same system",
+    "Used it at Walmart, Dollar General, AND the gas station all in one week. Works everywhere",
+
+    // === SOCIAL PROOF / SHARING ===
+    "I done told EVERYBODY at my church about this. My pastor even signed up 😂",
+    "Showed this to my whole Bible study group. 6 women huddled around one phone",
+    "My mama called me at 7am to talk about this. She NEVER calls that early",
+    "Watching from {city}! Anyone else around here seeing this??",
+    "{city} checking in! My whole family is about to know about this",
+    "Anyone in {city}? I need somebody to talk about this with because my family thinks I lost it",
+    "I texted my best friend '911 watch this NOW' and she thought someone was hurt 😂",
+
+    // === STRUGGLES / RELATABLE PAIN ===
+    "I'm 63 on a fixed income and been eating ramen 3 nights a week. This card changed everything",
+    "I'm a retired teacher living on $1,100 a month. This one card is almost half my pension. For 15 minutes of my time",
+    "Been putting off fixing my truck for 4 months. First thing I did with the card. Finally.",
+    "I was 3 days from getting my power shut off. This card literally saved me",
+    "I haven't been able to afford flowers for my husband's grave. First thing I bought 🙏",
+
+    // === URGENCY ===
+    "How long is this going to be up? I need my sister to see this before they take it down",
+    "Share this NOW. They always take these down",
+    "I genuinely believe this won't be up much longer. Watch it while you can",
+    "Don't let this opportunity pass. I almost did and I would've missed $500",
+];
+
+const cities = ['Jacksonville','Tampa','Atlanta','Houston','Charlotte','Memphis','Birmingham','Savannah','Baton Rouge','Richmond','Mobile','Raleigh','Nashville','New Orleans','Dallas','Macon','Jackson','Montgomery','Shreveport','Augusta'];
+const names = [
+    // Black names
+    'Tanya Robinson','Vivian Holmes','Dorothy Clark','Denise Washington','Gloria Bennett',
+    'Sheila Carter','Darlene King','LaShonda Williams','Marcus Johnson','Terrence Davis',
+    'Jerome Williams','Charles Mitchell','Leroy Hawkins','Monique Lewis','Angela Moore',
+    // White names
+    'Karen Sullivan','Linda Whitmore','Peggy Dawson','Susan Bailey','Shirley Combs',
+    'Robert Tate','Jack Whitmore','Earl Jessup','Steve Palmer','Brenda Perry',
+    'Howard Hawkins','Barbara Mitchell','Janet Morrison','Gary Freeman','Diane Crawford'
+];
+const colors = ['#4267B2','#45bd62','#e41e3f','#f7b928','#a040a0','#1877f2','#e46a2e','#7c3aed','#059669','#d97706','#dc2626','#2563eb'];
+
+let commentIdx = 0;
+let usedNames = {};
+
+function pickName() {
+    let name = names[Math.floor(Math.random()*names.length)];
+    let tries = 0;
+    while(usedNames[name] && tries < 5) { name = names[Math.floor(Math.random()*names.length)]; tries++; }
+    usedNames[name] = true;
+    return name;
+}
+
+function addComment() {
+    const feed = document.getElementById('commentsFeed');
+    const typing = document.getElementById('typingIndicator');
+    const name = pickName();
+    const color = colors[Math.floor(Math.random()*colors.length)];
+    let text = commentPool[commentIdx % commentPool.length];
+    text = text.replace('{city}', cities[Math.floor(Math.random()*cities.length)]);
+    const initials = name.split(' ').map(n=>n[0]).join('');
+    const mins = Math.floor(Math.random()*30)+1;
+
+    const div = document.createElement('div');
+    div.className = 'comment';
+    div.innerHTML = '<div class="comment-avatar" style="background:'+color+'">'+initials+'</div><div><div class="comment-bubble"><div class="comment-name">'+name+'</div><div class="comment-text">'+text+'</div></div><div class="comment-meta"><span>'+mins+'m</span><span>Like</span><span>Reply</span></div></div>';
+
+    typing.style.display = 'none';
+    feed.appendChild(div);
+    commentIdx++;
+
+    setTimeout(()=>{typing.style.display='flex'}, 2000);
+    setTimeout(addComment, Math.random()*8000+4000);
+}
+
+// Pre-load 3 comments
+function initComments() {
+    const feed = document.getElementById('commentsFeed');
+    for(let i=0;i<3;i++) {
+        const name = pickName();
+        const color = colors[i];
+        let text = commentPool[i];
+        text = text.replace('{city}', cities[Math.floor(Math.random()*cities.length)]);
+        const initials = name.split(' ').map(n=>n[0]).join('');
+        const div = document.createElement('div');
+        div.className = 'comment';
+        div.innerHTML = '<div class="comment-avatar" style="background:'+color+'">'+initials+'</div><div><div class="comment-bubble"><div class="comment-name">'+name+'</div><div class="comment-text">'+text+'</div></div><div class="comment-meta"><span>'+Math.floor(Math.random()*50+5)+'m</span><span>Like</span><span>Reply</span></div></div>';
+        feed.appendChild(div);
+    }
+    commentIdx = 3;
+    setTimeout(addComment, 5000);
+}
+
+// ===== FLOATING REACTIONS =====
+function startFloats() {
+    const container = document.getElementById('floatReactions');
+    const emojis = ['👍','❤️','😮','🙏','❤️','👍'];
+    function add() {
+        const el = document.createElement('div');
+        el.className = 'float-emoji';
+        el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+        el.style.left = Math.random()*30+'px';
+        container.appendChild(el);
+        setTimeout(()=>el.remove(), 3200);
+        setTimeout(add, Math.random()*2000+800);
+    }
+    setTimeout(add, 2000);
+}
+
+// ===== VIEWER COUNT =====
+function startViewers() {
+    let count = 3200+Math.floor(Math.random()*1000);
+    const el = document.getElementById('viewerCount');
+    function update() {
+        count += Math.floor(Math.random()*28)-10;
+        if(count<2800)count=2800+Math.floor(Math.random()*200);
+        if(count>5500)count=5500-Math.floor(Math.random()*200);
+        el.textContent = count.toLocaleString();
+        setTimeout(update, 3000+Math.random()*3000);
+    }
+    update();
+}
+
+// ===== ENGAGEMENT COUNTERS =====
+function startCounters() {
+    let likes=4200, comments=890, shares=1300;
+    function update() {
+        likes+=Math.floor(Math.random()*3);
+        comments+=Math.floor(Math.random()*2);
+        shares+=Math.floor(Math.random()*2);
+        document.getElementById('likeCount').textContent = (likes/1000).toFixed(1)+'K';
+        document.getElementById('commentCountDisplay').textContent = comments+' Comments';
+        document.getElementById('shareCount').textContent = (shares/1000).toFixed(1)+'K Shares';
+        setTimeout(update, 5000+Math.random()*5000);
+    }
+    update();
+}
+
+// ===== TIME AGO =====
+const startTime = Date.now()-25*60000;
+function updateTime(){
+    const mins = Math.floor((Date.now()-startTime)/60000);
+    document.getElementById('timeAgo').textContent = mins<60?mins+'m':Math.floor(mins/60)+'h';
+    setTimeout(updateTime, 60000);
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', function() {
+    initComments();
+    startFloats();
+    startViewers();
+    startCounters();
+    updateTime();
+});
+</script>
+
+
+
+
+
+</body></html>
