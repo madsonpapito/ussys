@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Check - USA System</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-flag-usa"></i>
+                </div>
+                USA <span>System</span>
+            </a>
+            <nav style="display: flex; gap: 20px;">
+                <a href="/" style="color: #fff; text-decoration: none; font-weight: 600;">Home</a>
+                <a href="#" style="color: #fff; text-decoration: none; font-weight: 600;">About</a>
+                <a href="#" style="color: #fff; text-decoration: none; font-weight: 600;">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="official-bar">
+        <div class="container">
+            "Official check: verify if there are restitutions in your name — response in 10s"
+        </div>
+    </div>
+
+    <main class="container section text-center">
+        <div class="glass-card animate-fade-in" style="max-width: 900px; margin: 0 auto;">
+            <h1 style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 2rem; color: var(--primary);">
+                How to claim your <span style="color: var(--secondary); text-decoration: underline;">Federal Restitutions</span> through the Official Check System
+            </h1>
+            
+            <div class="video-container" style="margin-bottom: 2rem;">
+                <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+
+            <div id="cta-container" class="hidden">
+                <a href="/pre.html" class="btn-cta" style="width: 100%; max-width: 500px;">
+                    Start My Verification Now <i class="fas fa-arrow-right"></i>
+                </a>
+                <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+                    <i class="fas fa-shield-alt"></i> Secure identity verification via Federal Database
+                </p>
+            </div>
+        </div>
+
+        <section class="section" style="max-width: 800px; margin: 0 auto; text-align: left;">
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary);">Program Overview</h2>
+            <p style="margin-bottom: 1rem;">The USA SYSTEM is an educational initiative designed to help residents identify unclaimed financial benefits. Our automated system cross-references public records to find potential restitution opportunities.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 2rem;">
+                <div class="glass-card" style="padding: 1.5rem;">
+                    <i class="fas fa-search-dollar" style="font-size: 1.5rem; color: var(--secondary); margin-bottom: 10px;"></i>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Transparent Search</h3>
+                    <p style="font-size: 0.85rem;">Access public databases with one click.</p>
+                </div>
+                <div class="glass-card" style="padding: 1.5rem;">
+                    <i class="fas fa-file-signature" style="font-size: 1.5rem; color: var(--secondary); margin-bottom: 10px;"></i>
+                    <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Step-by-Step Recovery</h3>
+                    <p style="font-size: 0.85rem;">Guided path to claim your funds safely.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container section text-center" style="border-top: 1px solid var(--border); opacity: 0.6; font-size: 0.8rem;">
+        <p>&copy; 2024 USA System. This is an independent educational program. We are not a government agency.</p>
+    </footer>
+
+    <script>
+        // Delay do CTA configurado para 10 segundos para fins de teste
+        setTimeout(() => {
+            document.getElementById('cta-container').classList.remove('hidden');
+        }, 10000);
+    </script>
+</body>
+</html>

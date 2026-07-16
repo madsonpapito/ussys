@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - USA System</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        .hub-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            box-shadow: var(--shadow);
+        }
+        .hub-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .hub-card i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+        .hub-card h3 {
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+        .hub-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+        .hub-badge {
+            display: inline-block;
+            background: #e6f0ff;
+            color: var(--secondary);
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body style="display: flex; background: #f1f5f9;">
+
+    <!-- Sidebar será injetada aqui -->
+    <div id="sidebar-container"></div>
+
+    <main style="flex: 1; padding: var(--spacing-md); height: 100vh; overflow-y: auto;">
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; background: #fff; padding: 1rem 2rem; border-radius: 12px; box-shadow: var(--shadow); border: 1px solid var(--border);">
+            <div>
+                <h1 style="font-size: 1.5rem; color: var(--primary);">Member Dashboard</h1>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Welcome back! Your claim verification is active.</p>
+            </div>
+            <div class="user-profile" style="display: flex; align-items: center; gap: 15px;">
+                <div style="text-align: right;">
+                    <p style="font-weight: 700; font-size: 0.9rem;">Claimant</p>
+                    <p style="font-size: 0.75rem; color: #059669;">Verification: Active</p>
+                </div>
+                <div style="width: 45px; height: 45px; background: var(--surface-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--border);">
+                    <i class="fas fa-user-check" style="color: var(--primary);"></i>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 1.5rem;">Educational Resources & Claim Guides</h2>
+            
+            <div class="hub-grid">
+                <a href="/american-refunds.html" class="hub-card">
+                    <span class="hub-badge">Premium Access</span>
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>American Refunds Guide</h3>
+                    <p>Complete roadmap for claiming federal tax and administrative refunds.</p>
+                </a>
+                <a href="/step-by-step-training.html" class="hub-card">
+                    <span class="hub-badge">Training</span>
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Step-by-Step Training</h3>
+                    <p>Follow our tutorial modules to ensure your claim is processed fast.</p>
+                </a>
+                <a href="/amazon-tax-recovery.html" class="hub-card">
+                    <span class="hub-badge">Guide</span>
+                    <i class="fas fa-shopping-basket"></i>
+                    <h3>Amazon Tax Recovery</h3>
+                    <p>How to recover taxes on past Amazon purchases for residents.</p>
+                </a>
+                <a href="/paypal-now.html" class="hub-card">
+                    <span class="hub-badge">Payment</span>
+                    <i class="fas fa-wallet"></i>
+                    <h3>PayPal Payout Setup</h3>
+                    <p>Connect your account to receive your funds directly online.</p>
+                </a>
+                <a href="/banking-benefits-guide.html" class="hub-card">
+                    <span class="hub-badge">Guide</span>
+                    <i class="fas fa-university"></i>
+                    <h3>Banking Benefits Guide</h3>
+                    <p>Access hidden account features and restitution programs.</p>
+                </a>
+                <a href="/housing-assistance-guide.html" class="hub-card">
+                    <span class="hub-badge">Guide</span>
+                    <i class="fas fa-home"></i>
+                    <h3>Housing Assistance Guide</h3>
+                    <p>Discover housing subsidies, Section 8, and emergency rent relief programs.</p>
+                </a>
+                <a href="/social-security-benefits-guide.html" class="hub-card">
+                    <span class="hub-badge">Guide</span>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Social Security Benefits</h3>
+                    <p>Maximize your retirement benefits and navigate SSI/SSDI applications.</p>
+                </a>
+                <a href="/medicaid-medicare-guide.html" class="hub-card">
+                    <span class="hub-badge">Guide</span>
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Medicaid & Medicare</h3>
+                    <p>Essential health coverage information and cost-saving medical strategies.</p>
+                </a>
+                <a href="/snap-food-stamps-guide.html" class="hub-card">
+                    <span class="hub-badge">Guide</span>
+                    <i class="fas fa-utensils"></i>
+                    <h3>SNAP & Food Stamps</h3>
+                    <p>Access nutritional assistance programs and bridge the food security gap.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="/src/components.js"></script>
+</body>
+</html>

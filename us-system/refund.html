@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund System - USA System</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/components.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="display: flex; background: #f1f5f9;">
+    
+    <!-- Sidebar será injetada aqui pelo components.js -->
+    <div id="sidebar-container"></div>
+
+    <main style="flex: 1; padding: var(--spacing-lg); overflow-y: auto;">
+        <header style="margin-bottom: var(--spacing-lg);">
+            <span style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em;">Module 01</span>
+            <h1  style="font-size: 2.5rem;">Guide: Refund System</h1>
+            <p style="color: var(--text-muted);">Follow the steps below to claim your refund today.</p>
+        </header>
+
+        <section style="max-width: 900px;">
+            <div class="video-container animate-fade-in" style="margin-bottom: var(--spacing-lg);">
+                <iframe src="https://play.tynk.ai/p/40dc2b28-ec59-4087-8d66-eb84c96502e1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+
+            <div class="glass-card animate-fade-in" style="animation-delay: 0.2s;">
+                <h2 style="margin-bottom: var(--spacing-md);">Operation Step-by-Step</h2>
+                
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Official Portal Access</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Access the official American refund system portal by clicking the link below the video.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Information Submittal</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Submit your basic information as guided in the video above to begin your eligibility verification.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Confirmation & Withdrawal</h4>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Following verification, the system will specify your available amount. Proceed to the bank transfer phase.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: var(--spacing-lg); text-align: center;">
+                    <button class="btn-cta" style="width: 100%;">Open Refund Portal <i class="fas fa-external-link-alt"></i></button>
+                    <p style="margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);"><i class="fas fa-info-circle"></i> The portal will open in a new tab.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/src/components.js"></script>
+</body>
+</html>
