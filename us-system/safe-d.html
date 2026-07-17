@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USA Financial Awareness | Official Educational Resource</title>
+    <title>USA Bureaucracy Mastery — Learn to Recover Fees & Refunds Yourself</title>
+    <meta name="description" content="Step-by-step training with templates and tools to help you navigate US bureaucracy, identify refundable fees, and submit recovery claims on your own.">
     <link rel="stylesheet" href="/src/styles/main.css">
     <link rel="stylesheet" href="/src/styles/components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,56 +23,132 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        .hero-gradient {
+        .hero-section {
             background: radial-gradient(circle at top right, #003366, var(--primary));
             color: #fff;
-            padding: 8rem 0 6rem;
+            padding: 6rem 0 4rem;
             position: relative;
             overflow: hidden;
         }
 
-        .hero-gradient::after {
+        .hero-section::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 100px;
+            height: 80px;
             background: linear-gradient(to top, var(--background), transparent);
         }
 
-        .feature-card {
+        .badge-tag {
+            background: rgba(255,255,255,0.12);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            letter-spacing: 0.5px;
+        }
+
+        .guarantee-strip {
+            background: #fff;
+            color: #059669;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-top: 2rem;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .problem-box {
+            background: #fff2f0;
+            border: 1px solid #ffccc7;
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-box {
+            background: #f6ffed;
+            border: 1px solid #b7eb8f;
+            border-radius: var(--radius-md);
+            padding: 2rem;
+        }
+
+        .refund-type-card {
             background: #fff;
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
-            padding: 2.5rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 1.75rem;
             height: 100%;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--secondary);
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            border-color: var(--secondary);
+        .refund-type-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+        }
+
+        .step-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem 2rem 2rem 5rem;
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 1.5rem;
+            top: 2rem;
+            width: 44px;
+            height: 44px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 2rem;
         }
 
         .faq-item {
             background: #fff;
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             overflow: hidden;
         }
 
         .faq-question {
-            padding: 1.5rem;
+            padding: 1.25rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
             font-weight: 700;
             color: var(--primary);
-            transition: background 0.3s;
+            transition: background 0.2s;
+            font-size: 0.95rem;
         }
 
         .faq-question:hover {
@@ -82,9 +159,10 @@
             padding: 0 1.5rem;
             max-height: 0;
             overflow: hidden;
-            transition: all 0.4s ease;
-            font-size: 0.95rem;
+            transition: all 0.35s ease;
+            font-size: 0.93rem;
             color: var(--text-muted);
+            line-height: 1.7;
         }
 
         .faq-item.active .faq-answer {
@@ -96,48 +174,71 @@
             transform: rotate(180deg);
         }
 
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background: var(--surface-light);
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+        .what-you-get-list {
+            list-style: none;
+            padding: 0;
         }
 
-        .stat-badge {
-            background: rgba(255,255,255,0.1);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
+        .what-you-get-list li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
         }
-        .guarantee-badge-hero {
-            background: #fff;
+
+        .what-you-get-list li:last-child {
+            border-bottom: none;
+        }
+
+        .what-you-get-list li i {
             color: #059669;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 800;
-            font-size: 1rem;
-            margin-top: 2.5rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            font-size: 1.2rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .price-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .price-box {
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .price-box.old {
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+        }
+
+        .price-box.new {
+            background: #fff;
+            border: 2px solid #059669;
+        }
+
+        @media (max-width: 768px) {
+            .price-comparison {
+                grid-template-columns: 1fr;
+            }
+            .step-card {
+                padding: 1.5rem 1.25rem 1.5rem 4rem;
+            }
+            .step-number {
+                left: 0.75rem;
+                top: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- HEADER -->
     <header class="header sticky-header">
         <div class="container">
             <div class="logo">
@@ -146,273 +247,425 @@
                 </div>
                 USA <span>Academy</span>
             </div>
-            <nav style="display: flex; gap: 30px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">
-                <a href="#curriculum" style="color: #fff; text-decoration: none; opacity: 0.8; transition: 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">Curriculum</a>
-                <a href="#faq" style="color: #fff; text-decoration: none; opacity: 0.8; transition: 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.8">FAQ</a>
-                <a href="https://www.checkout-ds24.com/product/683944" style="color: var(--secondary); background: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none;">Enroll Now</a>
+            <nav style="display: flex; gap: 24px; font-weight: 600; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; align-items: center;">
+                <a href="#what-is-this" style="color: #fff; text-decoration: none; opacity: 0.8;">What You Get</a>
+                <a href="#how-it-works" style="color: #fff; text-decoration: none; opacity: 0.8;">How It Works</a>
+                <a href="#faq" style="color: #fff; text-decoration: none; opacity: 0.8;">FAQ</a>
+                <a href="https://www.checkout-ds24.com/product/683944" style="color: var(--primary); background: #fff; padding: 0.5rem 1.25rem; border-radius: 4px; text-decoration: none;">Get Access</a>
             </nav>
         </div>
     </header>
 
-    <!-- ATTENTION (Hero) -->
-    <section class="hero-gradient text-center">
+    <!-- HERO -->
+    <section class="hero-section text-center">
         <div class="container">
-            <div class="stat-badge animate-fade-in">
-                <i class="fas fa-certificate" style="color: #ffd700;"></i> OFFICIAL LEARNING PATHWAY
+            <div class="badge-tag animate-fade-in">
+                <i class="fas fa-circle" style="color: #ffd700; font-size: 0.5rem;"></i> DO-IT-YOURSELF TRAINING PROGRAM
             </div>
-            <h1 style="font-size: 3.5rem; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;" class="animate-fade-in">
-                Mastering the Art of <span style="text-decoration: underline; text-underline-offset: 8px;">Financial Recovery</span> & Awareness
+            <h1 style="font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 1.5rem; max-width: 850px; margin-left: auto; margin-right: auto; line-height: 1.25;" class="animate-fade-in">
+                Learn to Navigate US Bureaucracy &amp; <span style="text-decoration: underline; text-underline-offset: 8px;">Recover Fees You're Owed</span> — Without Hiring Anyone
             </h1>
-            <p style="font-size: 1.25rem; opacity: 0.9; max-width: 700px; margin: 0 auto 3rem; line-height: 1.8;" class="animate-fade-in">
-                A structured educational roadmap designed to help US residents identify account errors, navigate recovery portals, and reclaim their financial clarity.
+            <p style="font-size: 1.2rem; opacity: 0.9; max-width: 680px; margin: 0 auto 2.5rem; line-height: 1.7;" class="animate-fade-in">
+                A complete step-by-step training that teaches you <strong>how to find, verify, and claim refundable fees</strong> from US government agencies and institutions — with ready-to-use templates, database access guides, and a clear action plan.
             </p>
             <div class="animate-fade-in">
-                <a href="https://www.checkout-ds24.com/product/683944" class="btn-cta" style="padding: 1.5rem 3.5rem; font-size: 1.2rem; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    Start Your Path to Clarity <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                <a href="https://www.checkout-ds24.com/product/683944" class="btn-cta" style="padding: 1.4rem 3rem; font-size: 1.15rem; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    Start the Training Now <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
                 </a>
             </div>
-
-            <div class="guarantee-badge-hero animate-fade-in">
-                <i class="fas fa-shield-check" style="font-size: 1.5rem;"></i> 60-DAY MONEY-BACK GUARANTEE
+            <div class="guarantee-strip animate-fade-in">
+                <i class="fas fa-shield-halved" style="font-size: 1.3rem;"></i> 60-DAY MONEY-BACK GUARANTEE — No Questions Asked
             </div>
         </div>
     </section>
 
-    <!-- INTEREST (Problem/Solution) -->
-    <section id="interest" class="section" style="background: #fff;">
+    <!-- THE PROBLEM + SOLUTION -->
+    <section id="what-is-this" class="section" style="background: #fff;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-                <div>
-                    <h2 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 2rem;">The Financial Literacy Gap</h2>
-                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; color: var(--text-muted);">
-                        Billions of dollars in rightful restitutions and unclaimed funds sit idle because most citizens lack the technical knowledge to navigate complex bureaucratic systems.
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch;">
+                <div class="problem-box">
+                    <h3 style="color: #a8071a; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-exclamation-triangle"></i> The Problem
+                    </h3>
+                    <p style="margin-bottom: 1rem; color: var(--text); line-height: 1.7;">
+                        <strong>Billions of dollars in overpaid fees, unused credits, and unclaimed refunds</strong> sit in government accounts every year — simply because most people don't know they exist or don't know how to claim them.
                     </p>
-                    <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-muted);">
-                        The USA Learning Program bridge this gap. We don't just "find money" — we teach you the <strong>framework</strong> to become your own financial advocate.
-                    </p>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem; font-weight: 600; color: var(--primary);">
-                            <i class="fas fa-check-circle" style="color: #059669;"></i> Understanding FOIA & Public Records
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem; font-weight: 600; color: var(--primary);">
-                            <i class="fas fa-check-circle" style="color: #059669;"></i> Navigating Claims Portals Safely
-                        </li>
-                        <li style="display: flex; align-items: center; gap: 15px; margin-bottom: 1rem; font-weight: 600; color: var(--primary);">
-                            <i class="fas fa-check-circle" style="color: #059669;"></i> Avoiding Recovery Scams & Fees
-                        </li>
+                    <p style="margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem; font-weight: 700;">You might be owed money from:</p>
+                    <ul style="list-style: none; padding: 0; line-height: 2.2;">
+                        <li><i class="fas fa-times-circle" style="color: #a8071a; margin-right: 8px;"></i> Overpaid property taxes or recording fees</li>
+                        <li><i class="fas fa-times-circle" style="color: #a8071a; margin-right: 8px;"></i> Unclaimed utility deposits and credits</li>
+                        <li><i class="fas fa-times-circle" style="color: #a8071a; margin-right: 8px;"></i> Dormant bank accounts and escrow overages</li>
+                        <li><i class="fas fa-times-circle" style="color: #a8071a; margin-right: 8px;"></i> Insurance premium overcharges and rebates</li>
+                        <li><i class="fas fa-times-circle" style="color: #a8071a; margin-right: 8px;"></i> Court fee reimbursements and class action settlements</li>
                     </ul>
                 </div>
-                <div style="position: relative;">
-                    <div style="background: var(--surface-light); border-radius: var(--radius-lg); padding: 3rem; position: relative; z-index: 2;">
-                        <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Module 1 Highlights:</h3>
-                        <div style="background: #fff; padding: 1rem; border-radius: 10px; border-left: 4px solid var(--secondary); margin-bottom: 1rem;">
-                            <strong style="display: block;">The Recovery Blueprint</strong>
-                            <span style="font-size: 0.85rem; color: var(--text-muted);">How to cross-reference multiple databases in minutes.</span>
-                        </div>
-                        <div style="background: #fff; padding: 1rem; border-radius: 10px; border-left: 4px solid var(--secondary); margin-bottom: 1rem;">
-                            <strong style="display: block;">Verification Protocol</strong>
-                            <span style="font-size: 0.85rem; color: var(--text-muted);">Ensuring your identity is protected during lookups.</span>
-                        </div>
-                        <div style="background: #fff; padding: 1rem; border-radius: 10px; border-left: 4px solid var(--secondary);">
-                            <strong style="display: block;">Documentation Mastery</strong>
-                            <span style="font-size: 0.85rem; color: var(--text-muted);">The exact forms needed for formal restitution inquiries.</span>
-                        </div>
-                    </div>
-                    <!-- Decorative element -->
-                    <div style="position: absolute; top: -20px; right: -20px; width: 100%; height: 100%; border: 2px dashed var(--border); border-radius: var(--radius-lg); z-index: 1;"></div>
+
+                <div class="solution-box">
+                    <h3 style="color: #389e0d; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-check-circle"></i> The Solution
+                    </h3>
+                    <p style="margin-bottom: 1rem; color: var(--text); line-height: 1.7;">
+                        <strong>This training gives you the exact knowledge and tools</strong> to find and claim these refunds yourself — without paying a lawyer, a "recovery agent," or anyone else a cut of your money.
+                    </p>
+                    <p style="margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem; font-weight: 700;">What you will learn:</p>
+                    <ul style="list-style: none; padding: 0; line-height: 2.2;">
+                        <li><i class="fas fa-check-circle" style="color: #389e0d; margin-right: 8px;"></i> Which agencies hold your unclaimed funds</li>
+                        <li><i class="fas fa-check-circle" style="color: #389e0d; margin-right: 8px;"></i> How to search public databases in minutes</li>
+                        <li><i class="fas fa-check-circle" style="color: #389e0d; margin-right: 8px;"></i> The exact forms to file and where to send them</li>
+                        <li><i class="fas fa-check-circle" style="color: #389e0d; margin-right: 8px;"></i> How to track your claim from submission to payout</li>
+                        <li><i class="fas fa-check-circle" style="color: #389e0d; margin-right: 8px;"></i> Red flags to avoid scams and unnecessary fees</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DESIRE (Benefits) -->
-    <section id="curriculum" class="section" style="background: var(--surface-light);">
+    <!-- TYPES OF REFUNDS COVERED -->
+    <section class="section" style="background: var(--surface-light);">
         <div class="container">
-            <div class="text-center" style="margin-bottom: 4rem;">
-                <h2 style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;">Inside the Training Academy</h2>
-                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Our curriculum is divided into three core phases designed to take you from total confusion to complete financial command.</p>
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 0.75rem;">Types of Refunds &amp; Fees Covered in the Training</h2>
+                <p style="color: var(--text-muted); max-width: 650px; margin: 0 auto;">The program covers <strong>50+ public databases</strong> across multiple categories. Here are the main ones:</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
-                <div class="feature-card">
-                    <div class="icon-box"><i class="fas fa-search-dollar"></i></div>
-                    <h4>Phase 1: Identification</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Learn where the "lost wealth" resides. We cover over 50 different public sources where restitutions often go unnoticed for decades.</p>
-                    <ul style="font-size: 0.85rem; line-height: 2; color: var(--primary); padding-left: 20px;">
-                        <li>Account Balance Errors</li>
-                        <li>Utility Credit Surpluses</li>
-                        <li>Unclaimed Insurance Dividends</li>
-                        <li>Social Security Escrow Funds</li>
-                    </ul>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+                <div class="refund-type-card">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🏛️</div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Government Overpayments</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                        Property tax overpayments, recording fee errors, permit fee refunds, court filing reimbursements, and administrative fee overcharges at county, state, and federal levels.
+                    </p>
                 </div>
-                <div class="feature-card">
-                    <div class="icon-box" style="color: #059669; background: #ecfdf5;"><i class="fas fa-shield-halved"></i></div>
-                    <h4>Phase 2: Validation</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">The most critical step. Learn to validate your claim without the need for expensive "recovery experts" or high-commission lawyers.</p>
-                    <ul style="font-size: 0.85rem; line-height: 2; color: var(--primary); padding-left: 20px;">
-                        <li>Self-Authentication Steps</li>
-                        <li>Official Filing Templates</li>
-                        <li>Response Timeline Analysis</li>
-                        <li>Escalation Strategies</li>
-                    </ul>
+
+                <div class="refund-type-card">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Utility Deposits &amp; Credits</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                        Unreturned security deposits from electric, water, and gas companies. Account credits after moving or switching providers that were never refunded.
+                    </p>
                 </div>
-                <div class="feature-card">
-                    <div class="icon-box" style="color: #7c3aed; background: #f5f3ff;"><i class="fas fa-hand-holding-dollar"></i></div>
-                    <h4>Phase 3: Disbursement</h4>
-                    <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Master the logistics of financial transfer. Ensure your funds are received safely, taxed correctly, and documented for your future records.</p>
-                    <ul style="font-size: 0.85rem; line-height: 2; color: var(--primary); padding-left: 20px;">
-                        <li>Direct Deposit Setup</li>
-                        <li>Tax Obligation Guidelines</li>
-                        <li>Long-term Wealth Protection</li>
-                        <li>Family Legacy Planning</li>
-                    </ul>
+
+                <div class="refund-type-card">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🏦</div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Dormant Bank &amp; Escrow Funds</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                        Forgotten bank accounts, uncashed checks, escrow overages after mortgage payoff, and safe deposit box contents turned over to state unclaimed property divisions.
+                    </p>
+                </div>
+
+                <div class="refund-type-card">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">🛡️</div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Insurance Premium Refunds</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                        Overcharged premiums, unearned premium refunds after policy cancellation, mortgage insurance rebates, and unclaimed life insurance benefits sitting with state treasuries.
+                    </p>
+                </div>
+
+                <div class="refund-type-card">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">⚖️</div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Class Action &amp; Settlement Funds</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                        Open class action settlements you may qualify for from data breaches, product defects, false advertising, and consumer protection violations — often with no proof of purchase required.
+                    </p>
+                </div>
+
+                <div class="refund-type-card">
+                    <div style="font-size: 2rem; margin-bottom: 1rem;">📑</div>
+                    <h4 style="margin-bottom: 0.5rem; color: var(--primary);">Administrative Fee Errors</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6;">
+                        Duplicate charges, processing fees applied in error, DMV overcharges, passport fee refunds, and medical billing errors from hospitals and insurance providers.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ (Trust/Objection Handling) -->
-    <section id="faq" class="section" style="background: #fff;">
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="section" style="background: #fff;">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 0.75rem;">How the Training Works</h2>
+                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Three clear phases. No fluff. No upsells. Everything you need in one program.</p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Search &amp; Identify — Find What's Owed to You</h4>
+                    <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7;">
+                        You get a <strong>curated directory of 50+ official databases</strong> — state unclaimed property portals, county tax records, federal agency databases, insurance commissioner websites, and class action settlement registries. We show you exactly which ones to check, what search terms to use, and how to cross-reference results so you don't miss anything. <strong>Average search time: 20–30 minutes.</strong>
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Verify &amp; Prepare — Build Your Claim the Right Way</h4>
+                    <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7;">
+                        Once you identify a potential refund, we provide <strong>fill-in-the-blank claim templates</strong> for each type of recovery. You'll learn what supporting documents are needed (ID copies, proof of address, old account statements), how to notarize when required, and how to package your claim so it gets processed on the first attempt — not rejected for missing information.
+                    </p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Submit &amp; Track — Follow Through Until You Get Paid</h4>
+                    <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.7;">
+                        We teach you the submission process for each agency type — online portals, mail-in forms, and in-person filing when applicable. You'll learn <strong>how long each type of claim typically takes</strong>, how to follow up without annoying the processing office, what to do if your claim is denied, and how to escalate. Plus tips on how to receive your payment — direct deposit, check, or prepaid card.
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 2.5rem;">
+                <a href="https://www.checkout-ds24.com/product/683944" class="btn-cta" style="padding: 1.2rem 2.8rem; font-size: 1.05rem; border-radius: 50px;">
+                    Get the Full Training Program <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU GET (Checklist) -->
+    <section class="section" style="background: var(--surface-light);">
         <div class="container" style="max-width: 800px;">
-            <div class="text-center" style="margin-bottom: 4rem;">
-                <h2 style="font-size: 2.5rem; color: var(--primary);">Frequently Asked Questions</h2>
-                <p style="color: var(--text-muted);">Everything you need to know about the USA Academy Program.</p>
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 0.75rem;">Everything Included in One Purchase</h2>
+                <p style="color: var(--text-muted);">No hidden fees. No recurring charges. One-time payment, lifetime access.</p>
+            </div>
+
+            <div class="glass-card" style="padding: 2.5rem;">
+                <ul class="what-you-get-list">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong style="color: var(--primary);">50+ Database Directory</strong>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">Organized by category with direct links and search instructions for each one.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong style="color: var(--primary);">Claim Templates for Every Refund Type</strong>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">Pre-written, fill-in-the-blank templates — just add your information and submit.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong style="color: var(--primary);">Step-by-Step Video Walkthroughs</strong>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">Watch us search live databases, fill out real forms, and submit actual claims.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong style="color: var(--primary);">Agency Response Timeline Guide</strong>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">Know exactly how long to wait before following up — and the right way to do it.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong style="color: var(--primary);">Scam Prevention Checklist</strong>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">Red flags to watch for so you never fall for fake "recovery" services charging 30–50%.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <strong style="color: var(--primary);">Lifetime Access + Future Updates</strong>
+                            <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 2px;">The databases and forms change over time — you get all updates at no extra cost.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" style="background: #fff;">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 style="font-size: 2rem; color: var(--primary); margin-bottom: 0.75rem;">What Does It Cost?</h2>
+                <p style="color: var(--text-muted);">Compare this to what alternatives cost — you'll never pay anyone a percentage again.</p>
+            </div>
+
+            <div class="price-comparison" style="margin-bottom: 3rem;">
+                <div class="price-box old">
+                    <p style="font-size: 0.85rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">Recovery Agents Charge</p>
+                    <p style="font-size: 2.5rem; font-weight: 800; color: #94a3b8; margin-bottom: 0.25rem; text-decoration: line-through;">30–50%</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">of every dollar they recover for you</p>
+                    <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 1rem; font-style: italic;">On a $2,500 recovery, they take $750–$1,250</p>
+                </div>
+                <div class="price-box new">
+                    <p style="font-size: 0.85rem; color: #059669; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">This Training Costs</p>
+                    <p style="font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 0.25rem;">One Low Fee</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">and you keep 100% of everything you recover</p>
+                    <p style="font-size: 0.8rem; color: #059669; margin-top: 1rem; font-weight: 700;">You recover $2,500? You keep all $2,500.</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="https://www.checkout-ds24.com/product/683944" class="btn-cta" style="padding: 1.4rem 3.5rem; font-size: 1.2rem; border-radius: 50px;">
+                    Enroll Now — Instant Access <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                </a>
+                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 40px; align-items: center;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-undo-alt" style="font-size: 1.8rem; color: #059669; margin-bottom: 0.3rem; display: block;"></i>
+                        <span style="font-weight: 800; font-size: 0.85rem; color: var(--primary);">60-DAY REFUND</span>
+                    </div>
+                    <img src="https://www.digistore24.com/static/img/badges/digistore24-seal-en.png" alt="Secure Checkout" style="height: 55px;">
+                    <div style="text-align: left; font-size: 0.8rem; color: var(--text-muted);">
+                        <p><strong>Secure Payment via Digistore24</strong></p>
+                        <p>SSL encrypted. All major payment methods.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" style="background: var(--surface-light);">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 style="font-size: 2.2rem; color: var(--primary); margin-bottom: 0.75rem;">Common Questions</h2>
             </div>
 
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        Is this a government program?
+                        What exactly is this — a service or a training?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        No. The USA Academy is an independent educational initiative. We are not affiliated with, authorized, or endorsed by any government agency. We provide educational tools to help you navigate public systems that already exist.
+                        <strong>It is a training program.</strong> We teach you how to do the research and filing yourself. You get video lessons, a database directory, and ready-to-use claim templates. We do NOT file claims for you, take a cut of your money, or act as a recovery agent.
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        Do you take a commission from my funds?
+                        Is this affiliated with any government agency?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Absolutely not. Unlike "recovery agents" who may charge 30-50% of your restitution, we only charge a one-time educational fee. Once you learn the system, 100% of any funds you recover belong to you.
+                        No. The USA Academy is a private educational program. We are not affiliated with, authorized by, or endorsed by any government agency. All the databases we reference are <strong>publicly available</strong> — we simply teach you how to use them effectively.
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        How long does the training take?
+                        How long does it take to complete the training?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        The core modules can be completed in approximately 2 hours. However, the materials and templates are yours to keep and use at your own pace. Most students complete their first official inquiry within 48 hours of starting.
+                        The core modules take about <strong>2 hours to watch</strong>. Most students complete their first database search within 30 minutes of starting and file their first claim within 48 hours. The templates and materials are yours permanently — you can work at your own pace.
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
-                        Is there a guarantee?
+                        Is there a guarantee that I will find money owed to me?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Yes. We offer a 60-day satisfaction period managed by Digistore24. If you feel the educational materials do not provide the value promised, you can request a full refund according to their policies.
+                        No. We cannot guarantee that you personally are owed any refunds — <strong>that depends entirely on your individual situation and history</strong>. What we guarantee is that the training teaches you the exact process. If you are not satisfied with the educational value of the program, you have a <strong>60-day refund window</strong> through Digistore24.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need any special computer skills or software?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No. If you can browse the internet, fill out an online form, and print a document, you have all the skills you need. The training is designed for <strong>everyday people</strong> — not accountants or lawyers.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Will the training work for people outside the United States?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        The databases and claim processes covered in this training are <strong>specific to United States agencies</strong> (federal, state, and county). If you have lived, worked, paid bills, or owned property in the US, it may apply to you even if you now live abroad.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ACTION (Final CTA) -->
-    <section class="section text-center" style="background: var(--surface-light);">
+    <!-- FINAL CTA -->
+    <section class="section text-center" style="background: #fff;">
         <div class="container">
-            <div class="glass-card animate-fade-in" style="max-width: 800px; margin: 0 auto; padding: 4rem;">
-                <h2 style="margin-bottom: 1.5rem; color: var(--primary); font-size: 2.5rem;">Join the Awareness Revolution</h2>
-                <p style="margin-bottom: 3rem; color: var(--text-muted); font-size: 1.1rem;">
-                    Don't leave your financial legacy to chance. Learn to navigate the system and secure what's rightfully yours.
+            <div class="glass-card animate-fade-in" style="max-width: 750px; margin: 0 auto; padding: 3.5rem;">
+                <h2 style="margin-bottom: 1rem; color: var(--primary); font-size: 2rem;">Stop Paying Someone Else to Do What You Can Learn Today</h2>
+                <p style="margin-bottom: 2.5rem; color: var(--text-muted); font-size: 1.05rem; line-height: 1.7;">
+                    Every day you wait is another day someone else might be collecting money that belongs to you — and keeping a huge cut. Learn the process once, and you'll have this skill for life.
                 </p>
-                <a href="https://www.checkout-ds24.com/product/683944" class="btn-cta" style="width: 100%; max-width: 500px; font-size: 1.3rem;">
-                    Enroll in USA Academy Today
+                <a href="https://www.checkout-ds24.com/product/683944" class="btn-cta" style="width: 100%; max-width: 480px; font-size: 1.15rem; padding: 1.3rem 2rem; border-radius: 50px;">
+                    Get Instant Access to the Training <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
                 </a>
-                <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 40px; align-items: center; border-top: 1px solid rgba(0,0,0,0.05); pt: 2rem;">
-                    <div style="text-align: center;">
-                        <i class="fas fa-undo-alt" style="font-size: 2rem; color: #059669; margin-bottom: 0.5rem; display: block;"></i>
-                        <span style="font-weight: 800; font-size: 0.9rem; color: var(--primary);">60-DAY REFUND</span>
-                    </div>
-                    <img src="https://www.digistore24.com/static/img/badges/digistore24-seal-en.png" alt="Digistore24" style="height: 60px;">
-                    <div style="text-align: left; font-size: 0.8rem; color: var(--text-muted);">
-                        <p><strong>Trusted Payment Provider</strong></p>
-                        <p>Secure SSL encrypted checkout.</p>
-                    </div>
-                </div>
+                <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+                    <i class="fas fa-lock" style="margin-right: 4px;"></i> Secure checkout. 60-day money-back guarantee. Instant access.
+                </p>
             </div>
         </div>
     </section>
 
-    <footer style="background: var(--primary); color: #fff; padding: 5rem 0 3rem;">
+    <!-- FOOTER -->
+    <footer style="background: var(--primary); color: #fff; padding: 4rem 0 2.5rem;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 4rem;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; margin-bottom: 3rem;">
                 <div>
-                    <h4 style="margin-bottom: 1.5rem; letter-spacing: 1px;">USA ACADEMY</h4>
-                    <p style="font-size: 0.9rem; opacity: 0.7; max-width: 400px; line-height: 1.8;">
-                        Empowering US residents with the knowledge, tools, and frameworks to navigate public financial systems with confidence and integrity.
+                    <h4 style="margin-bottom: 1.25rem; letter-spacing: 1px; font-size: 0.9rem;">USA ACADEMY</h4>
+                    <p style="font-size: 0.88rem; opacity: 0.7; max-width: 380px; line-height: 1.8;">
+                        An independent educational program providing training and tools to help individuals navigate US public bureaucracy and identify potential refunds and fee recoveries.
                     </p>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Support</h4>
-                    <nav style="display: flex; flex-direction: column; gap: 15px; font-size: 0.9rem;">
-                        <span style="opacity: 0.7;"><i class="fas fa-envelope" style="margin-right: 10px;"></i> support@usa-system.com</span>
+                    <h4 style="margin-bottom: 1.25rem; font-size: 0.9rem;">Support</h4>
+                    <nav style="display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem;">
+                        <span style="opacity: 0.7;"><i class="fas fa-envelope" style="margin-right: 8px;"></i> support@usa-system.com</span>
                         <a href="https://www.digistore24.com/info/contact" style="color: #fff; text-decoration: none; opacity: 0.7;">Payment Help</a>
                     </nav>
                 </div>
                 <div>
-                    <h4 style="margin-bottom: 1.5rem;">Transparency</h4>
-                    <nav style="display: flex; flex-direction: column; gap: 15px; font-size: 0.9rem;">
-                        <a href="/imprint.html" style="color: #fff; text-decoration: none; opacity: 0.7; hover:opacity:1;">Imprint</a>
+                    <h4 style="margin-bottom: 1.25rem; font-size: 0.9rem;">Legal</h4>
+                    <nav style="display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem;">
+                        <a href="/imprint.html" style="color: #fff; text-decoration: none; opacity: 0.7;">Imprint</a>
                         <a href="/privacy.html" style="color: #fff; text-decoration: none; opacity: 0.7;">Privacy Policy</a>
                         <a href="/terms.html" style="color: #fff; text-decoration: none; opacity: 0.7;">Terms of Service</a>
                     </nav>
                 </div>
             </div>
-            
+
             <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
-                <div style="text-align: center; font-size: 0.75rem; opacity: 0.5; max-width: 900px; margin: 0 auto; line-height: 1.6;">
+                <div style="text-align: center; font-size: 0.75rem; opacity: 0.5; max-width: 850px; margin: 0 auto; line-height: 1.7;">
                     <p style="margin-bottom: 1rem;">
-                        DISCLAIMER: The information provided on this website and within our program is for educational and informational purposes only. It is not intended as financial or legal advice. Recovery of funds is not guaranteed as it depends on individual circumstances and verification. We recommend consulting with a certified professional for specific financial or legal concerns.
+                        DISCLAIMER: This training program is for educational purposes only. USA Academy is an independent educational initiative and is not affiliated with, authorized by, or endorsed by any government agency. Recovery of funds depends on individual circumstances and is not guaranteed. We are not financial or legal advisors. You should consult with a licensed professional for advice specific to your situation. All referenced databases are publicly available government resources.
                     </p>
-                    <p>&copy; 2024 USA Academy Education Group. All rights reserved.</p>
+                    <p>&copy; 2026 USA Academy Education Group. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- FAQ Accordion Script -->
     <script>
-        // FAQ Accordion Logic
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const faqItem = button.parentElement;
-                
-                // Close others
                 document.querySelectorAll('.faq-item').forEach(item => {
                     if (item !== faqItem) item.classList.remove('active');
                 });
-                
-                // Toggle current
                 faqItem.classList.toggle('active');
             });
         });
 
-        // Smooth scroll for nav links
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
 
-    <!-- Begin of Digistore24 Trusted Badge Code -->
+    <!-- Digistore24 Trusted Badge -->
     <script type="text/javascript" src="https://www.digistore24.com/trusted-badge/45308/3fIZNI31q7YbYId/salespage"></script>
-    <!-- End of Digistore24 Trusted Badge Code -->
 
 </body>
 </html>
